@@ -1,0 +1,71 @@
+.form-label {
+    margin-right: 20px;
+}
+
+#highlighted-content {
+    padding: 10px;
+    color: #ffffff;
+    background-color: #00acd6;
+    font-weight: bold;
+    text-align: center;
+}
+
+.edit-icon, .delete-icon {
+    cursor: pointer;
+}
+
+.delete-icon {
+    color: red;
+}
+
+.modal-table {
+    display: table;
+    width: 100%;
+}
+
+.label-column {
+    width: 25%;
+}
+
+#suma_propusa:valid, #url:valid {
+    color: #00a65a;
+}
+
+#suma_propusa:invalid, #url:invalid {
+    color: red;
+}
+
+.toggled-label {
+    width: 22%;
+}
+
+.toggled-field {
+    width:72%;
+}
+
+.right-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 66px;
+}
+
+.filter-field {
+    margin-bottom: 16px;
+}
+
+.filter-field-sm {
+    width: 24%;
+}
+
+.filter-dropdown-sm {
+    max-width: 180px;
+    height: 30px;
+    padding: 2px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

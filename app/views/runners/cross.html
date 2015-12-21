@@ -1,0 +1,97 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+            Alergatori Cros
+          </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Acasa</a></li>
+        <li><a href="#">Adulti</a></li>
+        <li><a href="#">Cros</a></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p id="highlighted-content">Total alergatori cross: {{crossRunners.length}}</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p id="highlighted-content">Total taxe Cros: {{ getTotal() }} RON</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th style="width: 20px;"><a href="#runners/cross" ng-click="sortType = 'alergatorID'; sortReverse = !sortReverse">ID <i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'alergatorID' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'alergatorID' && sortReverse"></i></a></th>
+                                            <th style="width: 203px;"><a href="#runners/cross" ng-click="sortType = 'prenume'; sortReverse = !sortReverse">Prenume<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'prenume' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'prenume' && sortReverse"></i></a></th>
+                                            <th style="width: 185px;"><a href="#runners/cross" ng-click="sortType = 'nume'; sortReverse = !sortReverse">Nume<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'nume' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'nume' && sortReverse"></i></a></th>
+                                            <th style="width: 100px;"><a href="#runners/cross" ng-click="sortType = 'categorie'; sortReverse = !sortReverse">Categorie<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'categorie' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'categorie' && sortReverse"></i></a></th>
+                                            <th style="width: 100px;"><a href="#runners/cross" ng-click="sortType = 'proiectAles'; sortReverse = !sortReverse">Proiect<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'proiectAles' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'proiectAles' && sortReverse"></i></a></th>
+                                            <th style="width: 100px;"><a href="#runners/cross" ng-click="sortType = 'confirmat'; sortReverse = !sortReverse">Confirmat<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'confirmat' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'confirmat' && sortReverse"></i></a></th>
+                                            <th style="width: 100px;"><a href="#runners/cross" ng-click="sortType = 'platit'; sortReverse = !sortReverse">Platit<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'platit' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'platit' && sortReverse"></i></a></th>
+                                            <th style="width: 100px;"><a href="#runners/cross" ng-click="sortType = 'tipPlata'; sortReverse = !sortReverse">Tip plata<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'tipPlata' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'tipPlata' && sortReverse"></i></a></th>
+                                            <th style="width: 20px;">Edit</th>
+                                            <th style="width: 20px;">Dlt</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="crossRunner in crossRunners | orderBy:sortType:sortReverse" >
+                                            <td>{{crossRunner.alergatorID}}</td>
+                                            <td>{{crossRunner.prenume}}</td>
+                                            <td>{{crossRunner.nume}}</td>
+                                            <td>{{crossRunner.categorie}}</td>
+                                            <td>{{crossRunner.proiectAles}}</td>
+                                            <td>{{crossRunner.confirmat}}</td>
+                                            <td>{{crossRunner.platit}}</td>
+                                            <td>{{crossRunner.tipPlata}}</td>
+                                            <td>
+                                                <div class="tools" ng-controller="ModalDemoCtrl">
+                                                    <a ng-click="open(crossRunner.alergatorID)"><i class="fa fa-edit edit-icon"></i></a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="tools">
+                                                    <a ng-click="delete(crossRunner.alergatorID)"><i class="fa fa-trash-o delete-icon"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th rowspan="1" colspan="1">ID</th>
+                                            <th rowspan="1" colspan="1">Prenume</th>
+                                            <th rowspan="1" colspan="1">Nume</th>
+                                            <th rowspan="1" colspan="1">Categorie</th>
+                                            <th rowspan="1" colspan="1">Proiect</th>
+                                            <th rowspan="1" colspan="1">Confirmat</th>
+                                            <th rowspan="1" colspan="1">Platit</th>
+                                            <th rowspan="1" colspan="1">Tip plata</th>
+                                            <th rowspan="1" colspan="1">Edit</th>
+                                            <th rowspan="1" colspan="1">Dlt</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
