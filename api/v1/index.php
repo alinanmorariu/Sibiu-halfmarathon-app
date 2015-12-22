@@ -56,6 +56,10 @@
         '/runners/relay2', 'getRelay2Runners'
     );
 
+    $app->post(
+        '/runners/adults', 'addRunner'
+    );
+
     $app->run();
  
 ?>

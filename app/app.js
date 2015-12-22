@@ -1,4 +1,4 @@
-var SMAdmin = angular.module('SMAdmin', ['ngRoute', 'ui.bootstrap', 'projects', 'projectsForm', 'smRunners', 'crossRunners', 'relay4Runners', 'relay2Runners', 'adultRunners']);
+var SMAdmin = angular.module('SMAdmin', ['ngRoute', 'ui.bootstrap', 'projects', 'projectsForm', 'smRunnersForm', 'smRunners', 'crossRunners', 'relay4Runners', 'relay2Runners', 'adultRunners']);
 
 // routes
 SMAdmin.config(function($routeProvider) {
@@ -20,6 +20,11 @@ SMAdmin.config(function($routeProvider) {
             .when('/projects-form', {
                 templateUrl : 'views/forms/projectsForm.html',
                 controller  : 'projectsFormCtrl'
+         })
+    
+            .when('/sm-runners-form', {
+                templateUrl : 'views/forms/smRunnersForm.html',
+                controller  : 'smRunnersFormCtrl'
          })
                 
         // route for the Projects view

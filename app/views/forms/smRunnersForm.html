@@ -1,0 +1,111 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+            Inscriere alergatori semimaraton
+          </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Acasa</a></li>
+        <li><a href="#">Formulare</a></li>
+        <li><a href="#">Alergatori</a></li>
+        <li><a href="#">Adulti</a></li>
+        <li><a href="#">Semimaraton</a></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Inscriere alergator semimaraton</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form" name="addSmRunnerForm">
+                    <div class="box-body">
+                        <div class="form-group col-md-6">
+                            <label for="forname">Prenume*</label>
+                            <input type="text" class="form-control" id="forname" placeholder="Prenume" ng-model="newRunner.prenume" required>
+                        </div>
+                        <div class="box-body"></div>
+                        <div class="form-group col-md-6">
+                            <label for="name">Nume*</label>
+                            <input type="text" class="form-control" id="name" placeholder="Nume" ng-model="newRunner.nume" required>
+                        </div>
+                        <div class="box-body"></div>
+                        <div class="form-group col-md-6">
+                            <label for="category">Categoria*</label>
+                            <select name="category" id="category" ng-model="newRunner.categorie" required>
+                                <option value="">Alege...</option>
+                                <option ng-repeat="category in categories">{{category}}</option>
+                            </select>
+                        </div>
+                        <div class="box-body"></div>
+                        <div class="form-group col-md-6">
+                            <label for="dob">Data nasterii*</label>
+                            <input type="date" class="form-control" id="dob" ng-model="newRunner.datanasterii" required>
+                        </div>
+                        <div class="box-body"></div>
+                        <div class="form-group col-md-6">
+                            <label for="company">Compania</label>
+                            <input type="text" class="form-control" id="company" placeholder="Compania" ng-model="newRunner.companie">
+                        </div>
+                        <div class="box-body"></div>
+                        <div class="form-group col-md-6">
+                            <label for="city">Localitatea</label>
+                            <input type="text" class="form-control" id="city" placeholder="Localitatea" ng-model="newRunner.localitate">
+                        </div>
+                        <div class="box-body"></div>
+                        <div class="form-group col-md-6">
+                            <label for="phone">Telefon</label>
+                            <input type="phone" class="form-control" id="phone" placeholder="Numar de telefon" ng-model="newRunner.telefon">
+                        </div>
+                        <div class="box-body"></div>
+                        <div class="form-group col-md-6">
+                            <label for="email">Email*</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="newRunner.email" required>
+                        </div>
+                        <div class="box-body"></div>
+                        <div class="form-group col-md-6">
+                            <label for="record">Record personal</label>
+                            <input type="text" class="form-control" id="record" placeholder="Record personal" ng-model="newRunner.record">
+                        </div>
+                        <div class="box-body"></div>
+                        <div class="form-group col-md-6">
+                            <label for="proiectAles">Proiect*</label>
+                            <select name="proiectAles" ng-options="project.proiectID as (project.proiect + ' - ' + project.organizatie) for project in projects | orderBy:'proiect'" id="proiectAles" ng-model="newRunner.proiectAles" required>
+                                <option value="">Alege...</option>
+                                <!--<option ng-repeat="project in projects | orderBy:'proiect'" ng-value="project.proiectID">{{project.proiect}} - {{project.organizatie}}</option>-->
+                            </select>
+                        </div>
+                        <div class="box-body"></div>
+                        <div class="form-group col-md-6">
+                            <label for="marimeTricou">Marime tricou*</label>
+                            <select name="marimeTricou" id="marimeTricou" ng-model="newRunner.marimeTricou" required>
+                                <option value="">Alege...</option>
+                                <option ng-repeat="size in sizes">{{size}}</option>
+                            </select>
+                        </div><div class="box-body"></div>
+                        <div class="form-group col-md-6">
+                            <label for="tipPlata">Modalitate plata</label>
+                            <select name="tipPlata" id="tipPlata" ng-model="newRunner.tipPlata">
+                                <option value="">Alege...</option>
+                                <option ng-repeat="paymentMethod in paymentMethods">{{paymentMethod}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary" ng-click="addRunner()" ng-disabled="addSmRunnerForm.$invalid">Trimite</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
