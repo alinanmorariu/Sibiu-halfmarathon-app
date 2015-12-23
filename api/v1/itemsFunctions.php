@@ -114,5 +114,9 @@ function deleteItem($tableName, $itemID, $id) {
 function deleteProject($id) {
     echo deleteItem('proiecte', 'proiectID', $id);
 }
+
+function deleteRunner($id) {
+    echo deleteItem('alergatori', 'alergatorID', $id);
+}
    
 ?>

@@ -47,10 +47,10 @@ adultRunners.controller('adultRunnersCtrl', ['$scope', '$http', '$window', funct
 
     //delete runners
     $scope.delete = function(id) {
-        var confirmDeletion = confirm('Sigur doresti sa stergi proiectul ' + id + '?');
+        var confirmDeletion = confirm('Sigur doresti sa stergi alergatorul cu ID ' + id + '?');
         if (confirmDeletion == true) {
-            $http.delete('../api/v1/index.php/project/' + id).success(function(response) {
-                alert('Proiectul a fost sters!');
+            $http.delete('../api/v1/index.php/runner/' + id).success(function(response) {
+                alert('Alergatorul a fost sters!');
                 $window.location.reload();
             })
             return true;

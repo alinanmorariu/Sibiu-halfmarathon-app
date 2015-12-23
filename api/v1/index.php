@@ -60,6 +60,10 @@
         '/runners/adults', 'addRunner'
     );
 
+    $app->delete(
+        '/runner/:id', 'deleteRunner'
+    );
+
     $app->run();
  
 ?>
