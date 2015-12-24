@@ -69,3 +69,12 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+.custom-accordion {
+    margin-top: 20px;
+    padding-left: 4px;
+}
+
+.panel-group .panel {
+    margin-bottom: 20px;
+}

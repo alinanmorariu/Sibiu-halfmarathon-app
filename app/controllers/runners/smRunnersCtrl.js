@@ -10,18 +10,6 @@ smRunners.controller('smRunnersCtrl', ['$scope', '$http', '$window', 'commonServ
 
             $scope.smRunners = response;
 
-            /*$scope.getTotal = function() {
-                var total = 0;
-             
-                    for (var i = 0; i < $scope.smRunners.length; i++) {
-                        
-                        var runner = $scope.smRunners[i];
-                        total += parseInt(runner.taxa);
-                    }
-          
-                return total;
-            }*/
-
             $scope.getTotal = function() {
                 var total = 0;
 
