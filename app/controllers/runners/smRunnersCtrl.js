@@ -1,7 +1,7 @@
 var smRunners = angular.module('smRunners', []);
 
 
-smRunners.controller('smRunnersCtrl', ['$scope', '$http', '$window', function($scope, $http, $window) {
+smRunners.controller('smRunnersCtrl', ['$scope', '$http', '$window', 'commonService', function($scope, $http, $window, commonService) {
 
     //GET the list of registered halfmarathon runners
     var getSmRunnersList = function() {
@@ -42,7 +42,11 @@ smRunners.controller('smRunnersCtrl', ['$scope', '$http', '$window', function($s
     $scope.sortReverse = false;
 
     //delete runners
-    $scope.delete = function(id) {
+    $scope.delete = function(id){
+        
+        return commonService.deleteEntity('../api/v1/index.php/runner/', id, 'Sigur doresti sa stergi alergatorul cu ID ', 'Alergatorul a fost sters!');
+                                }
+        /*function(id) {
         var confirmDeletion = confirm('Sigur doresti sa stergi alergatorul cu ID ' + id + '?');
         if (confirmDeletion == true) {
             $http.delete('../api/v1/index.php/runner/' + id).success(function(response) {
@@ -53,7 +57,7 @@ smRunners.controller('smRunnersCtrl', ['$scope', '$http', '$window', function($s
         } else {
             return false;
         }
-    };
+    };*/
 
     $scope.isCollapsed = true;
 }]);

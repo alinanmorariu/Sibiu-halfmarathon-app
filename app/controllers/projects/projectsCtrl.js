@@ -1,7 +1,7 @@
 var projects = angular.module('projects', []);
 
 
-projects.controller('projectsCtrl', ['$scope', '$http', '$window', function($scope, $http, $window) {
+projects.controller('projectsCtrl', ['$scope', '$http', '$window', 'commonService', function($scope, $http, $window, commonService) {
 
     //GET the list of registered projects
     var getProjectsList = function() {
@@ -87,18 +87,10 @@ projects.controller('projectsCtrl', ['$scope', '$http', '$window', function($sco
     }*/
 
     //delete project
-    $scope.delete = function(id) {
-        var confirmDeletion = confirm('Sigur doresti sa stergi proiectul ' + id + '?');
-        if (confirmDeletion == true) {
-            $http.delete('../api/v1/index.php/project/' + id).success(function(response) {
-                alert('Proiectul a fost sters!');
-                $window.location.reload();
-            })
-            return true;
-        } else {
-            return false;
-        }
-    };
+    $scope.delete = function(id){
+        
+        return commonService.deleteEntity('../api/v1/index.php/project/', id, 'Sigur doresti sa stergi proiectul cu ID ', 'Proiectul a fost sters!');
+                                }
 
     $scope.isCollapsed = true;
 }]);
