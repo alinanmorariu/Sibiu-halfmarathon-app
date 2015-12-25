@@ -78,3 +78,10 @@
 .panel-group .panel {
     margin-bottom: 20px;
 }
+
+.table-container {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+}

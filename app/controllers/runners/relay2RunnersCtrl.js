@@ -1,7 +1,7 @@
 var relay2Runners = angular.module('relay2Runners', []);
 
 
-relay2Runners.controller('relay2RunnersCtrl', ['$scope', '$http', '$window', function($scope, $http, $window) {
+relay2Runners.controller('relay2RunnersCtrl', ['$scope', '$http', '$window', 'commonService', function($scope, $http, $window, commonService) {
 
     //GET the list of registered halfmarathon runners
     var getRelay2RunnersList = function() {
@@ -30,18 +30,9 @@ relay2Runners.controller('relay2RunnersCtrl', ['$scope', '$http', '$window', fun
     $scope.sortReverse = false;
 
     //delete runners
-    $scope.delete = function(id) {
-        var confirmDeletion = confirm('Sigur doresti sa stergi proiectul ' + id + '?');
-        if (confirmDeletion == true) {
-            $http.delete('../api/v1/index.php/project/' + id).success(function(response) {
-                alert('Proiectul a fost sters!');
-                $window.location.reload();
-            })
-            return true;
-        } else {
-            return false;
-        }
-    };
+        $scope.delete = function(id){    
+        return commonService.deleteEntity('../api/v1/index.php/runner/', id, 'Sigur doresti sa stergi alergatorul cu ID ', 'Alergatorul a fost sters!');
+                                }
 
     $scope.isCollapsed = true;
 }]);
