@@ -60,6 +60,10 @@
         '/runners/adults', 'addRunner'
     );
 
+    $app->post(
+        '/runners/relay2', 'addListOfRunners'
+    );
+
     $app->delete(
         '/runner/:id', 'deleteRunner'
     );

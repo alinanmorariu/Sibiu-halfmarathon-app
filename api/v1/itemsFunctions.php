@@ -7,7 +7,6 @@ function getItemFromList($tableName, $tableColumn, $id) {
             $db = getConnection();
             $stmt = $db->query($sql);  
             $item = $stmt->fetch(PDO::FETCH_OBJ);
-         //print_r($item);
             $db = null;
             echo json_encode(utf8ize($item));
           } catch(PDOException $e) {
@@ -42,7 +41,7 @@ function addProject() {
     }
 }
 
-//add a new project to the DB
+//add a new runner to the DB
 function addRunner() {
     global $app;
     $request = $app->request();
@@ -72,6 +71,44 @@ function addRunner() {
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
+}
+
+function addListOfRunners() {
+    global $app;
+    $request = $app->request();
+    $list = json_decode($request->getBody());
+    $sql = "INSERT INTO alergatori (prenume, nume, categorie, datanasterii, companie, localitate, telefon, email, cursa, record, proiectAles, marimeTricou, taxa, tipPlata, echipa, ordine_stafeta) VALUES (:prenume, :nume, :categorie, :datanasterii, :companie, :localitate, :telefon, :email, :cursa, :record, :proiectAles, :marimeTricou, :taxa, :tipPlata, :echipa, :ordine_stafeta)";
+    
+                try{
+                $db = getConnection();
+                $stmt = $db->prepare($sql);
+                    
+                    foreach($list as $key => $value){                      
+                        $stmt->bindParam("prenume", $value->prenume);
+        $stmt->bindParam("nume", $value->nume);
+        $stmt->bindParam("categorie", $value->categorie);
+        $stmt->bindParam("datanasterii", $value->datanasterii);
+        $stmt->bindParam("companie", $value->companie);
+        $stmt->bindParam("localitate", $value->localitate);
+        $stmt->bindParam("telefon", $value->telefon);
+        $stmt->bindParam("email", $value->email);
+        $stmt->bindParam("cursa", $value->cursa);
+        $stmt->bindParam("record", $vallue->record);
+        $stmt->bindParam("proiectAles", $value->proiectAles);
+        $stmt->bindParam("marimeTricou", $value->marimeTricou);
+        $stmt->bindParam("taxa", $value->taxa);
+        $stmt->bindParam("tipPlata", $value->tipPlata);
+        $stmt->bindParam("echipa", $value->echipa);
+        $stmt->bindParam("ordine_stafeta", $value->ordine_stafeta);
+        $stmt->execute();
+        $value->alergatorID = $db->lastInsertId();
+        $db = null;
+        echo json_encode(utf8ize($value));
+                    }
+            } catch(PDOException $e) {
+                echo 'ERROR: ' . $e->getMessage();
+            }  
+
 }
 
 //update project
