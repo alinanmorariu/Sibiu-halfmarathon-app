@@ -8,7 +8,7 @@
         <li><a href="#">Formulare</a></li>
         <li><a href="#">Alergatori</a></li>
         <li><a href="#">Adulti</a></li>
-        <li><a href="#">stafeta 4x5km</a></li>
+        <li><a href="#">Stafeta 4x5km</a></li>
     </ol>
 </section>
 
@@ -44,17 +44,17 @@
       </uib-accordion-heading>
       <div class="form-group col-md-6">
                             <label for="forname">Prenume*</label>
-                            <input type="text" class="form-control" id="forname" placeholder="Prenume" ng-model="newRunner.prenume" required>
+                            <input type="text" class="form-control" id="forname" placeholder="Prenume" ng-model="firstRunner.prenume" required>
                         </div>
                                 <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="name">Nume*</label>
-                            <input type="text" class="form-control" id="name" placeholder="Nume" ng-model="newRunner.nume" required>
+                            <input type="text" class="form-control" id="name" placeholder="Nume" ng-model="firstRunner.nume" required>
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="category">Categoria*</label>
-                            <select name="category" id="category" ng-model="newRunner.categorie" required>
+                            <select name="category" id="category" ng-model="firstRunner.categorie" required>
                                 <option value="">Alege...</option>
                                 <option ng-repeat="category in categories">{{category}}</option>
                             </select>
@@ -62,45 +62,45 @@
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="dob">Data nasterii*</label>
-                            <input type="date" class="form-control" id="dob" ng-model="newRunner.datanasterii" required>
+                            <input type="date" class="form-control" id="dob" ng-model="firstRunner.datanasterii" required>
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="company">Compania</label>
-                            <input type="text" class="form-control" id="company" placeholder="Compania" ng-model="newRunner.companie">
+                            <input type="text" class="form-control" id="company" placeholder="Compania" ng-model="firstRunner.companie">
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="city">Localitatea</label>
-                            <input type="text" class="form-control" id="city" placeholder="Localitatea" ng-model="newRunner.localitate">
+                            <input type="text" class="form-control" id="city" placeholder="Localitatea" ng-model="firstRunner.localitate">
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="phone">Telefon</label>
-                            <input type="phone" class="form-control" id="phone" placeholder="Numar de telefon" ng-model="newRunner.telefon">
+                            <input type="phone" class="form-control" id="phone" placeholder="Numar de telefon" ng-model="firstRunner.telefon">
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="email">Email*</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="newRunner.email" required>
+                            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="firstRunner.email" required>
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="record">Record personal</label>
-                            <input type="text" class="form-control" id="record" placeholder="Record personal" ng-model="newRunner.record">
+                            <input type="text" class="form-control" id="record" placeholder="Record personal" ng-model="firstRunner.record">
                         </div>
                         
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="marimeTricou">Marime tricou*</label>
-                            <select name="marimeTricou" id="marimeTricou" ng-model="newRunner.marimeTricou" required>
+                            <select name="marimeTricou" id="marimeTricou" ng-model="firstRunner.marimeTricou" required>
                                 <option value="">Alege...</option>
                                 <option ng-repeat="size in sizes">{{size}}</option>
                             </select>
                         </div><div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="tipPlata">Modalitate plata</label>
-                            <select name="tipPlata" id="tipPlata" ng-model="newRunner.tipPlata">
+                            <select name="tipPlata" id="tipPlata" ng-model="firstRunner.tipPlata">
                                 <option value="">Alege...</option>
                                 <option ng-repeat="paymentMethod in paymentMethods">{{paymentMethod}}</option>
                             </select>
@@ -113,17 +113,17 @@
       </uib-accordion-heading>
       <div class="form-group col-md-6">
                             <label for="forname">Prenume*</label>
-                            <input type="text" class="form-control" id="forname" placeholder="Prenume" ng-model="newRunner.prenume" required>
+                            <input type="text" class="form-control" id="forname" placeholder="Prenume" ng-model="secondRunner.prenume" required>
                         </div>
                                 <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="name">Nume*</label>
-                            <input type="text" class="form-control" id="name" placeholder="Nume" ng-model="newRunner.nume" required>
+                            <input type="text" class="form-control" id="name" placeholder="Nume" ng-model="secondRunner.nume" required>
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="category">Categoria*</label>
-                            <select name="category" id="category" ng-model="newRunner.categorie" required>
+                            <select name="category" id="category" ng-model="secondRunner.categorie" required>
                                 <option value="">Alege...</option>
                                 <option ng-repeat="category in categories">{{category}}</option>
                             </select>
@@ -131,45 +131,45 @@
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="dob">Data nasterii*</label>
-                            <input type="date" class="form-control" id="dob" ng-model="newRunner.datanasterii" required>
+                            <input type="date" class="form-control" id="dob" ng-model="secondRunner.datanasterii" required>
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="company">Compania</label>
-                            <input type="text" class="form-control" id="company" placeholder="Compania" ng-model="newRunner.companie">
+                            <input type="text" class="form-control" id="company" placeholder="Compania" ng-model="secondRunner.companie">
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="city">Localitatea</label>
-                            <input type="text" class="form-control" id="city" placeholder="Localitatea" ng-model="newRunner.localitate">
+                            <input type="text" class="form-control" id="city" placeholder="Localitatea" ng-model="secondRunner.localitate">
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="phone">Telefon</label>
-                            <input type="phone" class="form-control" id="phone" placeholder="Numar de telefon" ng-model="newRunner.telefon">
+                            <input type="phone" class="form-control" id="phone" placeholder="Numar de telefon" ng-model="secondRunner.telefon">
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="email">Email*</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="newRunner.email" required>
+                            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="secondRunner.email" required>
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="record">Record personal</label>
-                            <input type="text" class="form-control" id="record" placeholder="Record personal" ng-model="newRunner.record">
+                            <input type="text" class="form-control" id="record" placeholder="Record personal" ng-model="secondRunner.record">
                         </div>
                         
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="marimeTricou">Marime tricou*</label>
-                            <select name="marimeTricou" id="marimeTricou" ng-model="newRunner.marimeTricou" required>
+                            <select name="marimeTricou" id="marimeTricou" ng-model="secondRunner.marimeTricou" required>
                                 <option value="">Alege...</option>
                                 <option ng-repeat="size in sizes">{{size}}</option>
                             </select>
                         </div><div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="tipPlata">Modalitate plata</label>
-                            <select name="tipPlata" id="tipPlata" ng-model="newRunner.tipPlata">
+                            <select name="tipPlata" id="tipPlata" ng-model="secondRunner.tipPlata">
                                 <option value="">Alege...</option>
                                 <option ng-repeat="paymentMethod in paymentMethods">{{paymentMethod}}</option>
                             </select>
@@ -181,17 +181,17 @@
       </uib-accordion-heading>
       <div class="form-group col-md-6">
                             <label for="forname">Prenume*</label>
-                            <input type="text" class="form-control" id="forname" placeholder="Prenume" ng-model="newRunner.prenume" required>
+                            <input type="text" class="form-control" id="forname" placeholder="Prenume" ng-model="thirdRunner.prenume" required>
                         </div>
                                 <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="name">Nume*</label>
-                            <input type="text" class="form-control" id="name" placeholder="Nume" ng-model="newRunner.nume" required>
+                            <input type="text" class="form-control" id="name" placeholder="Nume" ng-model="thirdRunner.nume" required>
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="category">Categoria*</label>
-                            <select name="category" id="category" ng-model="newRunner.categorie" required>
+                            <select name="category" id="category" ng-model="thirdRunner.categorie" required>
                                 <option value="">Alege...</option>
                                 <option ng-repeat="category in categories">{{category}}</option>
                             </select>
@@ -199,45 +199,45 @@
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="dob">Data nasterii*</label>
-                            <input type="date" class="form-control" id="dob" ng-model="newRunner.datanasterii" required>
+                            <input type="date" class="form-control" id="dob" ng-model="thirdRunner.datanasterii" required>
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="company">Compania</label>
-                            <input type="text" class="form-control" id="company" placeholder="Compania" ng-model="newRunner.companie">
+                            <input type="text" class="form-control" id="company" placeholder="Compania" ng-model="thirdRunner.companie">
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="city">Localitatea</label>
-                            <input type="text" class="form-control" id="city" placeholder="Localitatea" ng-model="newRunner.localitate">
+                            <input type="text" class="form-control" id="city" placeholder="Localitatea" ng-model="thirdRunner.localitate">
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="phone">Telefon</label>
-                            <input type="phone" class="form-control" id="phone" placeholder="Numar de telefon" ng-model="newRunner.telefon">
+                            <input type="phone" class="form-control" id="phone" placeholder="Numar de telefon" ng-model="thirdRunner.telefon">
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="email">Email*</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="newRunner.email" required>
+                            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="thirdRunner.email" required>
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="record">Record personal</label>
-                            <input type="text" class="form-control" id="record" placeholder="Record personal" ng-model="newRunner.record">
+                            <input type="text" class="form-control" id="record" placeholder="Record personal" ng-model="thirdRunner.record">
                         </div>
                         
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="marimeTricou">Marime tricou*</label>
-                            <select name="marimeTricou" id="marimeTricou" ng-model="newRunner.marimeTricou" required>
+                            <select name="marimeTricou" id="marimeTricou" ng-model="thirdRunner.marimeTricou" required>
                                 <option value="">Alege...</option>
                                 <option ng-repeat="size in sizes">{{size}}</option>
                             </select>
                         </div><div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="tipPlata">Modalitate plata</label>
-                            <select name="tipPlata" id="tipPlata" ng-model="newRunner.tipPlata">
+                            <select name="tipPlata" id="tipPlata" ng-model="thirdRunner.tipPlata">
                                 <option value="">Alege...</option>
                                 <option ng-repeat="paymentMethod in paymentMethods">{{paymentMethod}}</option>
                             </select>
@@ -250,17 +250,17 @@
       </uib-accordion-heading>
       <div class="form-group col-md-6">
                             <label for="forname">Prenume*</label>
-                            <input type="text" class="form-control" id="forname" placeholder="Prenume" ng-model="newRunner.prenume" required>
+                            <input type="text" class="form-control" id="forname" placeholder="Prenume" ng-model="fourthRunner.prenume" required>
                         </div>
                                 <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="name">Nume*</label>
-                            <input type="text" class="form-control" id="name" placeholder="Nume" ng-model="newRunner.nume" required>
+                            <input type="text" class="form-control" id="name" placeholder="Nume" ng-model="fourthRunner.nume" required>
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="category">Categoria*</label>
-                            <select name="category" id="category" ng-model="newRunner.categorie" required>
+                            <select name="category" id="category" ng-model="fourthRunner.categorie" required>
                                 <option value="">Alege...</option>
                                 <option ng-repeat="category in categories">{{category}}</option>
                             </select>
@@ -268,45 +268,45 @@
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="dob">Data nasterii*</label>
-                            <input type="date" class="form-control" id="dob" ng-model="newRunner.datanasterii" required>
+                            <input type="date" class="form-control" id="dob" ng-model="fourthRunner.datanasterii" required>
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="company">Compania</label>
-                            <input type="text" class="form-control" id="company" placeholder="Compania" ng-model="newRunner.companie">
+                            <input type="text" class="form-control" id="company" placeholder="Compania" ng-model="fourthRunner.companie">
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="city">Localitatea</label>
-                            <input type="text" class="form-control" id="city" placeholder="Localitatea" ng-model="newRunner.localitate">
+                            <input type="text" class="form-control" id="city" placeholder="Localitatea" ng-model="fourthRunner.localitate">
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="phone">Telefon</label>
-                            <input type="phone" class="form-control" id="phone" placeholder="Numar de telefon" ng-model="newRunner.telefon">
+                            <input type="phone" class="form-control" id="phone" placeholder="Numar de telefon" ng-model="fourthRunner.telefon">
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="email">Email*</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="newRunner.email" required>
+                            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="fourthRunner.email" required>
                         </div>
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="record">Record personal</label>
-                            <input type="text" class="form-control" id="record" placeholder="Record personal" ng-model="newRunner.record">
+                            <input type="text" class="form-control" id="record" placeholder="Record personal" ng-model="fourthRunner.record">
                         </div>
                         
                         <div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="marimeTricou">Marime tricou*</label>
-                            <select name="marimeTricou" id="marimeTricou" ng-model="newRunner.marimeTricou" required>
+                            <select name="marimeTricou" id="marimeTricou" ng-model="fourthRunner.marimeTricou" required>
                                 <option value="">Alege...</option>
                                 <option ng-repeat="size in sizes">{{size}}</option>
                             </select>
                         </div><div class="box-body"></div>
                         <div class="form-group col-md-6">
                             <label for="tipPlata">Modalitate plata</label>
-                            <select name="tipPlata" id="tipPlata" ng-model="newRunner.tipPlata">
+                            <select name="tipPlata" id="tipPlata" ng-model="fourthRunner.tipPlata">
                                 <option value="">Alege...</option>
                                 <option ng-repeat="paymentMethod in paymentMethods">{{paymentMethod}}</option>
                             </select>

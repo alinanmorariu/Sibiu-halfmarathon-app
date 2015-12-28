@@ -79,36 +79,34 @@ function addListOfRunners() {
     $list = json_decode($request->getBody());
     $sql = "INSERT INTO alergatori (prenume, nume, categorie, datanasterii, companie, localitate, telefon, email, cursa, record, proiectAles, marimeTricou, taxa, tipPlata, echipa, ordine_stafeta) VALUES (:prenume, :nume, :categorie, :datanasterii, :companie, :localitate, :telefon, :email, :cursa, :record, :proiectAles, :marimeTricou, :taxa, :tipPlata, :echipa, :ordine_stafeta)";
     
-                try{
-                $db = getConnection();
-                $stmt = $db->prepare($sql);
-                    
-                    foreach($list as $key => $value){                      
-                        $stmt->bindParam("prenume", $value->prenume);
-        $stmt->bindParam("nume", $value->nume);
-        $stmt->bindParam("categorie", $value->categorie);
-        $stmt->bindParam("datanasterii", $value->datanasterii);
-        $stmt->bindParam("companie", $value->companie);
-        $stmt->bindParam("localitate", $value->localitate);
-        $stmt->bindParam("telefon", $value->telefon);
-        $stmt->bindParam("email", $value->email);
-        $stmt->bindParam("cursa", $value->cursa);
-        $stmt->bindParam("record", $vallue->record);
-        $stmt->bindParam("proiectAles", $value->proiectAles);
-        $stmt->bindParam("marimeTricou", $value->marimeTricou);
-        $stmt->bindParam("taxa", $value->taxa);
-        $stmt->bindParam("tipPlata", $value->tipPlata);
-        $stmt->bindParam("echipa", $value->echipa);
-        $stmt->bindParam("ordine_stafeta", $value->ordine_stafeta);
-        $stmt->execute();
-        $value->alergatorID = $db->lastInsertId();
+    try{
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        foreach($list as $key => $value){                      
+            $stmt->bindParam("prenume", $value->prenume);
+            $stmt->bindParam("nume", $value->nume);
+            $stmt->bindParam("categorie", $value->categorie);
+            $stmt->bindParam("datanasterii", $value->datanasterii);
+            $stmt->bindParam("companie", $value->companie);
+            $stmt->bindParam("localitate", $value->localitate);
+            $stmt->bindParam("telefon", $value->telefon);
+            $stmt->bindParam("email", $value->email);
+            $stmt->bindParam("cursa", $value->cursa);
+            $stmt->bindParam("record", $value->record);
+            $stmt->bindParam("proiectAles", $value->proiectAles);
+            $stmt->bindParam("marimeTricou", $value->marimeTricou);
+            $stmt->bindParam("taxa", $value->taxa);
+            $stmt->bindParam("tipPlata", $value->tipPlata);
+            $stmt->bindParam("echipa", $value->echipa);
+            $stmt->bindParam("ordine_stafeta", $value->ordine_stafeta);
+            $stmt->execute();
+            $value->alergatorID = $db->lastInsertId();
+            json_encode(utf8ize($value));
+        }
         $db = null;
-        echo json_encode(utf8ize($value));
-                    }
-            } catch(PDOException $e) {
-                echo 'ERROR: ' . $e->getMessage();
-            }  
-
+    } catch(PDOException $e) {
+        echo 'ERROR: ' . $e->getMessage();
+    }  
 }
 
 //update project
