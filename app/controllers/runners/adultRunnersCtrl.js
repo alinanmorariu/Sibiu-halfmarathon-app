@@ -54,22 +54,21 @@ adultRunners.controller('adultRunnersCtrl', ['$scope', '$http', '$window', 'comm
     $scope.isCollapsed = true;
 }]);
 
-projects.controller('ModalDemoCtrl', ['$scope', '$uibModal', '$http',
+adultRunners.controller('modalAdultRunnerCtrl', ['$scope', '$uibModal', '$http',
     function($scope, $uibModal, $http) {
 
         $scope.open = function(id, size) {
-            $http.get('../api/v1/index.php/project/' + id).success(function(response) {
-                $scope.project = response;
-                console.log('proiectul' + $scope.project.proiectID);
+            $http.get('../api/v1/index.php/runner/' + id).success(function(response) {
+                $scope.runner = response;
                 var modalInstance = $uibModal.open({
                     animation: $scope.animationsEnabled,
-                    templateUrl: '../app/views/projects/updateProjectModal.html',
+                    templateUrl: '../app/views/runners/updateAdultRunnerModal.html',
                     controller: 'ModalInstanceCtrl',
                     id: id,
                     size: size,
                     resolve: {
                         item: function() {
-                            return $scope.project;
+                            return $scope.runner;
                         }
                     }
                 });
@@ -78,15 +77,15 @@ projects.controller('ModalDemoCtrl', ['$scope', '$uibModal', '$http',
     }
 ]);
 
-projects.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', 'item', '$http', '$window',
+adultRunners.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', 'item', '$http', '$window',
     function($scope, $uibModalInstance, item, $http, $window) {
 
-        $scope.project = item;
+        $scope.runner = item;
 
         $scope.save = function() {
-            var confirmUpdate = confirm('Sigur doresti sa modifici proiectul ' + $scope.project.proiect + '?');
+            var confirmUpdate = confirm('Sigur doresti sa modifici alergatorul ' + $scope.runner.prenume + ' ' + $scope.runner.nume + '?');
             if (confirmUpdate == true) {
-                $http.put('../api/v1/index.php/project/' + $scope.project.proiectID, $scope.project).success(function(response) {
+                $http.put('../api/v1/index.php/runner/' + $scope.runner.alergatorID, $scope.runner).success(function(response) {
                     alert('Modificarile au fost salvate!');
                     $window.location.reload();
                 })

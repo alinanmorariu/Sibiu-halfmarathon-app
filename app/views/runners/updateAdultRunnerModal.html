@@ -1,0 +1,332 @@
+<div class="modal-header">
+    <button type="button" class="close" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">×</span></button>
+    <h4 class="modal-title">Modifica alergator</h4>
+</div>
+<div class="modal-body">
+    <form name="modifyRunnerForm">
+        <table class="modal-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="label-column">
+                        <div class="form-group">
+                            <label class="form-label">ID</label>
+                        </div>
+                    </td>
+                    <td class="field-column">
+                        <div class="form-group">
+                            {{runner.alergatorID}}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column">
+                        <div class="form-group">
+                            <label for="prenume" class="form-label">Prenume</label>
+                        </div>
+                    </td>
+                    <td class="field-column">
+                        <div class="form-group">
+                            <input id="prenume" name="prenume" type="text" class="form-control" placeholder="Prenume" ng-model="runner.prenume">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column">
+                        <div class="form-group">
+                            <label for="nume" class="form-label">Nume</label>
+                        </div>
+                    </td>
+                    <td class="field-column">
+                        <div class="form-group">
+                            <input id="nume" name="nume" type="text" class="form-control" placeholder="Nume" ng-model="runner.nume">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column">
+                        <div class="form-group">
+                            <label for="categorie" class="form-label">Categorie</label>
+                        </div>
+                    </td>
+                    <td class="field-column">
+                        <div class="form-group">
+                            <input id="categorie" name="categorie" type="text" class="form-control" placeholder="Categorie" ng-model="runner.categorie" </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="datanasterii" class="form-label">Data nasterii</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="datanasterii" name="datanasterii" type="text" class="form-control" placeholder="mm-dd-yyyy" ng-model="runner.datanasterii">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="echipa" class="form-label">Echipa</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="echipa" name="echipa" type="text" class="form-control" placeholder="Echipa" ng-model="runner.echipa">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="ordine_stafeta" class="form-label">Ordine stafeta</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="ordine_stafeta" name="ordine_stafeta" type="text" class="form-control" placeholder="Ordine stafeta" ng-model="runner.ordine_stafeta">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="companie" class="form-label">Companie</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="companie" name="companie" type="text" class="form-control" placeholder="Compania" ng-model="runner.companie">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="localitate" class="form-label">Localitate</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="localitate" name="localitate" type="text" class="form-control" placeholder="Localitatea" ng-model="runner.localitate">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="telefon" class="form-label">Telefon</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="telefon" name="telefon" type="text" class="form-control" placeholder="Telefon" ng-model="runner.telefon">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="email" class="form-label">Email</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="email" name="email" type="email" class="form-control" placeholder="Email" ng-model="runner.email">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="cursa" class="form-label">Cursa</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="cursa" name="cursa" type="text" class="form-control" placeholder="Cursa" ng-model="runner.cursa">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="record" class="form-label">Record</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="record" name="record" type="text" class="form-control" placeholder="Record" ng-model="runner.record">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="proiectAles" class="form-label">Proiect ales</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="proiectAles" name="proiectAles" type="text" class="form-control" placeholder="Proiect ales" ng-model="runner.proiectAles">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="marimeTricou" class="form-label">Marime tricou</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="marimeTricou" name="marimeTricou" type="text" class="form-control" placeholder="Marime tricou" ng-model="runner.marimeTricou">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="confirmat" class="form-label">Confirmat</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="confirmat" name="confirmat" type="text" class="form-control" placeholder="Confirmat" ng-model="runner.confirmat">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="taxa" class="form-label">Taxa</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="taxa" name="taxa" type="text" class="form-control" placeholder="Taxa" ng-model="runner.taxa">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="platit" class="form-label">Platit</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="platit" name="platit" type="text" class="form-control" placeholder="Platit" ng-model="runner.platit">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="tipPlata" class="form-label">Tip plata</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="tipPlata" name="tipPlata" type="text" class="form-control" placeholder="Tip plata" ng-model="runner.tipPlata">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="documentJustificativ" class="form-label">Document justificativ</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="documentJustificativ" name="documentJustificativ" type="text" class="form-control" placeholder="Document justificativ" ng-model="runner.documentJustificativ">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="dataPlata" class="form-label">Data platii</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="dataPlata" name="dataPlata" type="text" class="form-control" placeholder="Data platii" ng-model="runner.dataPlata">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="Observatii" class="form-label">Observatii</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <textarea id="Observatii" name="Observatii" type="text" class="form-control" placeholder="Observatii" ng-model="runner.Observatii"></textarea>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="suma_propusa" class="form-label">Suma propusa</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="suma_propusa" name="suma_propusa" type="text" class="form-control" placeholder="Suma propusa" ng-model="runner.suma_propusa">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="text_fundraiser" class="form-label">Text fundraiser</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <textarea id="text_fundraiser" name="text_fundraiser" type="text" class="form-control" placeholder="Text fundraiser" ng-model="runner.text_fundraiser"></textarea>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="foto" class="form-label">Foto</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="foto" name="foto" type="text" class="form-control" placeholder="Foto" ng-model="runner.foto">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="diaspora" class="form-label">Diaspora</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="diaspora" name="diaspora" type="text" class="form-control" placeholder="Diaspora" ng-model="runner.diaspora">
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" ng-click="cancel()">Cancel</button>
+        <button class="btn btn-primary" ng-click="save()" ng-disabled="modifyRunnerForm.$invalid">Salveaza</button>
+    </div>

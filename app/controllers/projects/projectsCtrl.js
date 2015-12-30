@@ -89,7 +89,8 @@ projects.controller('projectsCtrl', ['$scope', '$http', '$window', 'commonServic
     //delete project
     $scope.delete = function(id){
         
-        return commonService.deleteEntity('../api/v1/index.php/project/', id, 'Sigur doresti sa stergi proiectul cu ID ', 'Proiectul a fost sters!');
+        return commonService.deleteEntity('../api/v1/index.php/project/', id, 'Sigur doresti sa stergi proiectul cu ID ', 'Proiectul a fost sters!', 'Proiectul NU a fost sters.');
+
                                 }
 
     $scope.isCollapsed = true;

@@ -56,6 +56,10 @@
         '/runners/relay2', 'getRelay2Runners'
     );
 
+    $app->get(
+        '/runner/:id', 'getRunner'
+    );
+
     $app->post(
         '/runners/adults', 'addRunner'
     );
@@ -66,6 +70,10 @@
 
     $app->post(
         '/runners/relay4', 'addListOfRunners'
+    );
+
+    $app->put(
+        '/runner/:id', 'updateRunner'
     );
 
     $app->delete(
