@@ -55,8 +55,10 @@
                         </div>
                     </td>
                     <td class="field-column">
-                        <div class="form-group">
-                            <input id="categorie" name="categorie" type="text" class="form-control" placeholder="Categorie" ng-model="runner.categorie" </td>
+                            <select id="categorie" name="categorie" type="text" class="form-control" placeholder="Categorie" ng-model="runner.categorie" >
+                                <option ng-repeat="category in categories">{{category}}</option>
+                            </select>
+                    </td>
                 </tr>
                 <tr>
                     <td class="field-column">
@@ -148,10 +150,10 @@
                             <label for="cursa" class="form-label">Cursa</label>
                         </div>
                     </td>
-                    <td>
-                        <div class="form-group">
-                            <input id="cursa" name="cursa" type="text" class="form-control" placeholder="Cursa" ng-model="runner.cursa">
-                        </div>
+                    <td class="field-column">
+                            <select id="cursa" name="cursa" type="text" class="form-control" placeholder="Cursa" ng-model="runner.cursa" ng-change="changeTax()">
+                                <option ng-repeat="race in races">{{race}}</option>
+                            </select>
                     </td>
                 </tr>
                 <tr>
@@ -172,10 +174,11 @@
                             <label for="proiectAles" class="form-label">Proiect ales</label>
                         </div>
                     </td>
-                    <td>
-                        <div class="form-group">
-                            <input id="proiectAles" name="proiectAles" type="text" class="form-control" placeholder="Proiect ales" ng-model="runner.proiectAles">
-                        </div>
+                    </td>
+                    <td class="field-column">
+                            <select id="proiectAles" name="proiectAles" type="text" class="form-control" placeholder="Proiect ales" ng-model="runner.proiectAles">
+                                <option ng-repeat="project in projects">{{project.proiectID}}</option>
+                            </select>
                     </td>
                 </tr>
                 <tr>
@@ -184,10 +187,10 @@
                             <label for="marimeTricou" class="form-label">Marime tricou</label>
                         </div>
                     </td>
-                    <td>
-                        <div class="form-group">
-                            <input id="marimeTricou" name="marimeTricou" type="text" class="form-control" placeholder="Marime tricou" ng-model="runner.marimeTricou">
-                        </div>
+                    <td class="field-column">
+                            <select id="marimeTricou" name="marimeTricou" type="text" class="form-control" placeholder="Marime tricou" ng-model="runner.marimeTricou">
+                                <option ng-repeat="size in sizes">{{size}}</option>
+                            </select>
                     </td>
                 </tr>
                 <tr>
@@ -196,9 +199,9 @@
                             <label for="confirmat" class="form-label">Confirmat</label>
                         </div>
                     </td>
-                    <td>
-                        <div class="form-group">
-                            <input id="confirmat" name="confirmat" type="text" class="form-control" placeholder="Confirmat" ng-model="runner.confirmat">
+                    <td class="field-column">
+                            <div class="form-group">
+                            {{runner.confirmat}}
                         </div>
                     </td>
                 </tr>
@@ -210,7 +213,7 @@
                     </td>
                     <td>
                         <div class="form-group">
-                            <input id="taxa" name="taxa" type="text" class="form-control" placeholder="Taxa" ng-model="runner.taxa">
+                            {{runner.taxa}}
                         </div>
                     </td>
                 </tr>
@@ -220,10 +223,10 @@
                             <label for="platit" class="form-label">Platit</label>
                         </div>
                     </td>
-                    <td>
-                        <div class="form-group">
-                            <input id="platit" name="platit" type="text" class="form-control" placeholder="Platit" ng-model="runner.platit">
-                        </div>
+                    <td class="field-column">
+                            <select id="platit" name="platit" type="text" class="form-control" placeholder="Platit" ng-model="runner.platit" ng-change="changeConfirmation()">
+                                <option ng-repeat="conf in confirmation">{{conf}}</option>
+                            </select>
                     </td>
                 </tr>
                 <tr>
@@ -232,10 +235,10 @@
                             <label for="tipPlata" class="form-label">Tip plata</label>
                         </div>
                     </td>
-                    <td>
-                        <div class="form-group">
-                            <input id="tipPlata" name="tipPlata" type="text" class="form-control" placeholder="Tip plata" ng-model="runner.tipPlata">
-                        </div>
+                    <td class="field-column">
+                            <select id="tipPlata" name="tipPlata" type="text" class="form-control" placeholder="Tip plata" ng-model="runner.tipPlata" ng-change="changeTax()">
+                                <option ng-repeat="paymentMethod in paymentMethods">{{paymentMethod}}</option>
+                            </select>
                     </td>
                 </tr>
                 <tr>

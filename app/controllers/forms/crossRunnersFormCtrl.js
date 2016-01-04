@@ -17,7 +17,7 @@ crossRunnersForm.controller('crossRunnersFormCtrl', ['$scope', '$http', '$window
                 })
             };
 
-            $scope.categories = ["feminin", "masculin"];
+            $scope.categories = ["Feminin", "Masculin"];
             $scope.sizes = ["S", "M", "L", "XL", "XXL"];
             $scope.paymentMethods = ["cash", "online", "transfer"];
             var getProjectsList = function() {                      $http.get('../api/v1/index.php/projects').success(function(response) {

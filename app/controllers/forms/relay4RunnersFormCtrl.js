@@ -3,7 +3,7 @@ var relay4RunnersForm = angular.module('relay4RunnersForm', []);
 
 relay4RunnersForm.controller('relay4RunnersFormCtrl', ['$scope', '$http', '$window', function($scope, $http, $window) {
     
-    $scope.categories = ["feminin", "masculin"];
+    $scope.categories = ["Feminin", "Masculin"];
     $scope.sizes = ["S", "M", "L", "XL", "XXL"];
     $scope.paymentMethods = ["cash", "online", "transfer"];
 
