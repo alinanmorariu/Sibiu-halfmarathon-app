@@ -21,6 +21,31 @@
                 <div class="box-body table-container">
                     <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
                         <div class="row">
+                                    <div class="col-sm-6">
+                                <div class="col-sm-2"><p>Filtreaza dupa:</p></div>
+                                <div class="col-sm-2">
+                                    <select ng-model="selected.criteria">
+                                        <option value="">Alege criteriul...</option>
+                                        <option ng-repeat="crit in criteria">{{crit}}</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control filter-field" placeholder="Introdu numele" ng-show="selected.criteria=='Nume'">
+                                    <input type="text" class="form-control filter-field" placeholder="Introdu prenumele" ng-show="selected.criteria=='Prenume'">
+                                    <select id="proiectAles" name="proiectAles" type="text" class="form-control filter-field" ng-show="selected.criteria=='Proiect'">
+                                        <option value="">Alege...</option>
+                                        <option ng-repeat="project in projects">{{project.proiectID}}</option>
+                            </select>
+                                    <select id="platit" name="platit" type="text" class="form-control filter-field" ng-show="selected.criteria=='Platit'">
+                                        <option value="">Alege...</option>
+                                        <option ng-repeat="statusPlata in statusPlati">{{statusPlata}}</option>
+                            </select>
+                                    <select id="paymenMethod" name="paymentMethod" type="text" class="form-control filter-field" ng-show="selected.criteria=='Tip plata'">
+                                        <option value="">Alege...</option>
+                                        <option ng-repeat="paymentMethod in paymentMethods">{{paymentMethod}}</option>
+                            </select>
+                                </div>
+                            </div>
                             <div class="col-sm-3">
                                 <p id="highlighted-content">Total alergatori adulti: {{adultRunners.length}}</p>
                             </div>

@@ -30,10 +30,10 @@ smRunners.controller('smRunnersCtrl', ['$scope', '$http', '$window', 'commonServ
     $scope.sortReverse = false;
 
     //delete runners
-    $scope.delete = function(id){
-        
-        return commonService.deleteEntity('../api/v1/index.php/runner/', id, 'Sigur doresti sa stergi alergatorul cu ID ', 'Alergatorul a fost sters!');
-                                }
+    $scope.delete = function(id) {
+
+            return commonService.deleteEntity('../api/v1/index.php/runner/', id, 'Sigur doresti sa stergi alergatorul cu ID ', 'Alergatorul a fost sters!');
+        }
         /*function(id) {
         var confirmDeletion = confirm('Sigur doresti sa stergi alergatorul cu ID ' + id + '?');
         if (confirmDeletion == true) {
@@ -48,4 +48,17 @@ smRunners.controller('smRunnersCtrl', ['$scope', '$http', '$window', 'commonServ
     };*/
 
     $scope.isCollapsed = true;
+
+    var getProjectsList = function() {
+        $http.get('../api/v1/index.php/projects').success(function(response) {
+
+            $scope.projects = response;
+
+        })
+    };
+    getProjectsList();
+
+    $scope.criteria = ["Nume", "Prenume", "Proiect", "Platit", "Tip plata"];
+    $scope.statusPlati = ["0", "1"];
+    $scope.paymentMethods = ["cash", "online", "transfer", "sponsor", "voucher"];
 }]);

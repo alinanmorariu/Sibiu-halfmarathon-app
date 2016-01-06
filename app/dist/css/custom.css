@@ -85,3 +85,7 @@
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch;
 }
+
+.filter-field {
+    margin-left: 70px;
+}

@@ -35,4 +35,16 @@ relay4Runners.controller('relay4RunnersCtrl', ['$scope', '$http', '$window', 'co
                                 }
 
     $scope.isCollapsed = true;
+    var getProjectsList = function() {
+        $http.get('../api/v1/index.php/projects').success(function(response) {
+
+            $scope.projects = response;
+
+        })
+    };
+    getProjectsList();
+
+    $scope.criteria = ["Nume", "Prenume", "Proiect", "Platit", "Tip plata"];
+    $scope.statusPlati = ["0", "1"];
+    $scope.paymentMethods = ["cash", "online", "transfer", "sponsor", "voucher"];
 }]);

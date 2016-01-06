@@ -34,4 +34,16 @@ crossRunners.controller('crossRunnersCtrl', ['$scope', '$http', '$window', 'comm
         return commonService.deleteEntity('../api/v1/index.php/runner/', id, 'Sigur doresti sa stergi alergatorul cu ID ', 'Alergatorul a fost sters!');
                                 }
     $scope.isCollapsed = true;
+    var getProjectsList = function() {
+        $http.get('../api/v1/index.php/projects').success(function(response) {
+
+            $scope.projects = response;
+
+        })
+    };
+    getProjectsList();
+
+    $scope.criteria = ["Nume", "Prenume", "Proiect", "Platit", "Tip plata"];
+    $scope.statusPlati = ["0", "1"];
+    $scope.paymentMethods = ["cash", "online", "transfer", "sponsor", "voucher"];
 }]);
