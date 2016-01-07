@@ -22,6 +22,9 @@ smRunners.controller('smRunnersCtrl', ['$scope', '$http', '$window', 'commonServ
                 return total;
             }
 
+            $scope.export = function() {
+                return commonService.exportExcel('"alergatoriSm.xlsx"', $scope.filtered);
+            }
         });
     };
 
@@ -69,7 +72,7 @@ smRunners.controller('smRunnersCtrl', ['$scope', '$http', '$window', 'commonServ
     $scope.selected.project = "";
     $scope.selected.payment = "";
     $scope.selected.paymentMethod = "";
-    
+
     $scope.clearFilters = function() {
         $scope.selected.criteria = "";
         $scope.selected.name = "";

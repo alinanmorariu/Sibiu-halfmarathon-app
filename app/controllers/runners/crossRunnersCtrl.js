@@ -21,6 +21,10 @@ crossRunners.controller('crossRunnersCtrl', ['$scope', '$http', '$window', 'comm
           
                 return total;
             }
+            
+            $scope.export = function() {
+                return commonService.exportExcel('"alergatoriCros.xlsx"', $scope.filtered);
+            }
     
         });
     };

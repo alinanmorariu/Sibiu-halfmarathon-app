@@ -21,6 +21,10 @@ relay2Runners.controller('relay2RunnersCtrl', ['$scope', '$http', '$window', 'co
           
                 return total;
             }
+            
+            $scope.export = function() {
+                return commonService.exportExcel('"alergatoriStafeta2x10.xlsx"', $scope.filtered);
+            }
     
         });
     };

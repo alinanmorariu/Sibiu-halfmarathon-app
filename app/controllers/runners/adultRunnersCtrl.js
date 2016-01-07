@@ -39,6 +39,10 @@ adultRunners.controller('adultRunnersCtrl', ['$scope', '$http', '$window', 'comm
           
                 return total;
             }
+            
+            $scope.export = function() {
+                return commonService.exportExcel('"alergatoriAdulti.xlsx"', $scope.filtered);
+            }
     
         });
     };

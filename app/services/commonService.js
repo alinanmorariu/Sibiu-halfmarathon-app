@@ -26,6 +26,10 @@ commonService.factory('commonService', ['$route', '$http', '$window', 'SweetAler
                         SweetAlert.swal(cancelationMessage, "", "error");
                     }            
                 });
+        },
+        
+        exportExcel: function(fileName, data) {
+            alasql('SELECT * INTO XLSX(' + fileName + ',{headers:true}) FROM ?', [data]);
         }
     }
 }]);

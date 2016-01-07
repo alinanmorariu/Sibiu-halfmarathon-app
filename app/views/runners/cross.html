@@ -22,7 +22,9 @@
                     <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="col-sm-2"><p>Filtreaza dupa:</p></div>
+                                <div class="col-sm-2">
+                                    <p>Filtreaza dupa:</p>
+                                </div>
                                 <div class="col-sm-2">
                                     <select ng-model="selected.criteria">
                                         <option value="">Alege criteriul...</option>
@@ -35,15 +37,15 @@
                                     <select id="proiectAles" name="proiectAles" type="text" class="form-control filter-field" ng-show="selected.criteria=='Proiect'" ng-model="selected.project">
                                         <option value="">Alege...</option>
                                         <option ng-repeat="project in projects">{{project.proiectID}}</option>
-                            </select>
+                                    </select>
                                     <select id="platit" name="platit" type="text" class="form-control filter-field" ng-show="selected.criteria=='Platit'" ng-model="selected.payment">
                                         <option value="">Alege...</option>
                                         <option ng-repeat="statusPlata in statusPlati">{{statusPlata}}</option>
-                            </select>
+                                    </select>
                                     <select id="paymenMethod" name="paymentMethod" type="text" class="form-control filter-field" ng-show="selected.criteria=='Tip plata'" ng-model="selected.paymentMethod">
                                         <option value="">Alege...</option>
                                         <option ng-repeat="paymentMethod in paymentMethods">{{paymentMethod}}</option>
-                            </select>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -53,24 +55,29 @@
                                 <p id="highlighted-content">Total taxe: {{ getTotal(); }} RON</p>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-sm-2 clear-filters">
+                                <button class="btn btn-warning" ng-click="export()">Exporta Excel</button>
+                            </div>
+                        </div>
                         <div class="row" ng-show="selected.criteria!=''">
                             <div class="col-sm-12 active-filters">
                                 <div class="col-sm-2">
                                     Filtre active:
                                 </div>
-                                 <div class="col-sm-2" ng-show="selected.name!=''">
+                                <div class="col-sm-2" ng-show="selected.name!=''">
                                     <span>Nume : {{selected.name}}</span><span><a type="button" ng-click="selected.name = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
-                                 <div class="col-sm-2" ng-show="selected.forname!=''">
-                                     <span>Prenume : {{selected.forname}}</span><span><a type="button" ng-click="selected.forname = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                <div class="col-sm-2" ng-show="selected.forname!=''">
+                                    <span>Prenume : {{selected.forname}}</span><span><a type="button" ng-click="selected.forname = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
-                                 <div class="col-sm-2" ng-show="selected.project!=''">
-                                     <span>Proiect : {{selected.project}}</span><span><a type="button" ng-click="selected.project = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                <div class="col-sm-2" ng-show="selected.project!=''">
+                                    <span>Proiect : {{selected.project}}</span><span><a type="button" ng-click="selected.project = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
-                                 <div class="col-sm-2" ng-show="selected.payment!=''">
+                                <div class="col-sm-2" ng-show="selected.payment!=''">
                                     <span>Platit : {{selected.payment}}</span><span><a type="button" ng-click="selected.payment = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
-                                 <div class="col-sm-2" ng-show="selected.paymentMethod!=''">
+                                <div class="col-sm-2" ng-show="selected.paymentMethod!=''">
                                     <span>Tip plata : {{selected.paymentMethod}}</span><span><a type="button" ng-click="selected.paymentMethod = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
                                 <div class="col-sm-2 clear-filters" ng-show="selected.name!='' || selected.forname!='' || selected.project!='' || selected.payment!='' || selected.paymentMethod!=''">
@@ -96,7 +103,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr ng-repeat="crossRunner in filtered = (crossRunners  | filter:{nume:selected.name, prenume:selected.forname, proiectAles:selected.project, platit:selected.payment, tipPlata:selected.paymentMethod} | orderBy:sortType:sortReverse)" >
+                                        <tr ng-repeat="crossRunner in filtered = (crossRunners  | filter:{nume:selected.name, prenume:selected.forname, proiectAles:selected.project, platit:selected.payment, tipPlata:selected.paymentMethod} | orderBy:sortType:sortReverse)">
                                             <td>{{crossRunner.alergatorID}}</td>
                                             <td>{{crossRunner.prenume}}</td>
                                             <td>{{crossRunner.nume}}</td>
@@ -132,6 +139,11 @@
                                         </tr>
                                     </tfoot>
                                 </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2 clear-filters">
+                                <button class="btn btn-warning" ng-click="export()">Exporta Excel</button>
                             </div>
                         </div>
                     </div>
