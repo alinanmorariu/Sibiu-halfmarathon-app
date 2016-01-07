@@ -69,5 +69,14 @@ smRunners.controller('smRunnersCtrl', ['$scope', '$http', '$window', 'commonServ
     $scope.selected.project = "";
     $scope.selected.payment = "";
     $scope.selected.paymentMethod = "";
+    
+    $scope.clearFilters = function() {
+        $scope.selected.criteria = "";
+        $scope.selected.name = "";
+        $scope.selected.forname = "";
+        $scope.selected.project = "";
+        $scope.selected.payment = "";
+        $scope.selected.paymentMethod = "";
+    }
 
 }]);

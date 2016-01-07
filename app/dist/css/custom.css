@@ -92,6 +92,8 @@
 
 .active-filters {
     margin: 10px 0 16px 0;
+    border: #00acd6 1px solid;
+    padding: 12px;
 }
 
 .active-filters .col-sm-2 {
@@ -103,4 +105,12 @@
     color: darkred;
     margin-left: 6px;
     cursor: pointer;
+}
+
+.clear-filters {
+    float: right;
+}
+
+#clear-filters {
+    color: #555555;
 }

@@ -54,4 +54,13 @@ crossRunners.controller('crossRunnersCtrl', ['$scope', '$http', '$window', 'comm
     $scope.selected.project = "";
     $scope.selected.payment = "";
     $scope.selected.paymentMethod = "";
+    
+    $scope.clearFilters = function() {
+        $scope.selected.criteria = "";
+        $scope.selected.name = "";
+        $scope.selected.forname = "";
+        $scope.selected.project = "";
+        $scope.selected.payment = "";
+        $scope.selected.paymentMethod = "";
+    }
 }]);

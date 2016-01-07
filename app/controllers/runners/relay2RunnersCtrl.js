@@ -55,4 +55,13 @@ relay2Runners.controller('relay2RunnersCtrl', ['$scope', '$http', '$window', 'co
     $scope.selected.project = "";
     $scope.selected.payment = "";
     $scope.selected.paymentMethod = "";
+    
+    $scope.clearFilters = function() {
+        $scope.selected.criteria = "";
+        $scope.selected.name = "";
+        $scope.selected.forname = "";
+        $scope.selected.project = "";
+        $scope.selected.payment = "";
+        $scope.selected.paymentMethod = "";
+    }
 }]);

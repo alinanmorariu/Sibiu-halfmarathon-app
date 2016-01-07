@@ -53,25 +53,28 @@
                                 <p id="highlighted-content">Total taxe: {{ getTotal(); }} RON</p>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" ng-show="selected.criteria!=''">
                             <div class="col-sm-12 active-filters">
-                                <div class="col-sm-2" ng-show="selected.criteria!=''">
+                                <div class="col-sm-2">
                                     Filtre active:
                                 </div>
                                  <div class="col-sm-2" ng-show="selected.name!=''">
-                                    <span>Nume : {{selected.name}}</span><span><a type="button" ng-click="selected.name = ''"><i class="fa fa-fw fa-close"></i></i></a></span>
+                                    <span>Nume : {{selected.name}}</span><span><a type="button" ng-click="selected.name = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
                                  <div class="col-sm-2" ng-show="selected.forname!=''">
-                                     <span>Prenume : {{selected.forname}}</span><span><a type="button" ng-click="selected.forname = ''"><i class="fa fa-fw fa-close"></i></i></a></span>
+                                     <span>Prenume : {{selected.forname}}</span><span><a type="button" ng-click="selected.forname = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
                                  <div class="col-sm-2" ng-show="selected.project!=''">
-                                     <span>Proiect : {{selected.project}}</span><span><a type="button" ng-click="selected.project = ''"><i class="fa fa-fw fa-close"></i></i></a></span>
+                                     <span>Proiect : {{selected.project}}</span><span><a type="button" ng-click="selected.project = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
                                  <div class="col-sm-2" ng-show="selected.payment!=''">
-                                    <span>Platit : {{selected.payment}}</span><span><a type="button" ng-click="selected.payment = ''"><i class="fa fa-fw fa-close"></i></i></a></span>
+                                    <span>Platit : {{selected.payment}}</span><span><a type="button" ng-click="selected.payment = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
                                  <div class="col-sm-2" ng-show="selected.paymentMethod!=''">
                                     <span>Tip plata : {{selected.paymentMethod}}</span><span><a type="button" ng-click="selected.paymentMethod = ''"><i class="fa fa-fw fa-close"></i></i></a></span>
+                                </div>
+                                <div class="col-sm-2 clear-filters" ng-show="selected.name!='' || selected.forname!='' || selected.project!='' || selected.payment!='' || selected.paymentMethod!=''">
+                                    <span><button class="btn" id="clear-filters" type="button" ng-click="clearFilters()">Sterge toate filtrele</button></span>
                                 </div>
                             </div>
                         </div>
