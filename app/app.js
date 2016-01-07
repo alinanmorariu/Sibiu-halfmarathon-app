@@ -1,4 +1,4 @@
-var SMAdmin = angular.module('SMAdmin', ['ngRoute', 'ui.bootstrap', 'oitozero.ngSweetAlert', 'projects', 'projectsForm', 'smRunnersForm', 'crossRunnersForm', 'relay2RunnersForm', 'relay4RunnersForm', 'smRunners', 'crossRunners', 'relay4Runners', 'relay2Runners', 'adultRunners', 'commonService']);
+var SMAdmin = angular.module('SMAdmin', ['ngRoute', 'ui.bootstrap', 'oitozero.ngSweetAlert', 'projects', 'projectsForm', 'smRunnersForm', 'crossRunnersForm', 'relay2RunnersForm', 'relay4RunnersForm', 'companyRunnersForm', 'smRunners', 'crossRunners', 'relay4Runners', 'relay2Runners', 'adultRunners', 'commonService']);
 
 // routes
 SMAdmin.config(function($routeProvider) {
@@ -40,6 +40,11 @@ SMAdmin.config(function($routeProvider) {
         .when('/relay4-runners-form', {
                 templateUrl : 'views/forms/relay4Form.html',
                 controller  : 'relay4RunnersFormCtrl'
+         })
+    
+        .when('/company-runners-form', {
+                templateUrl : 'views/forms/companyRunnersForm.html',
+                controller  : 'companyRunnersFormCtrl'
          })
                
                 

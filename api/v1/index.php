@@ -72,6 +72,10 @@
         '/runners/relay4', 'addListOfRunners'
     );
 
+    $app->post(
+        '/runners/company', 'addListOfRunners'
+    );
+
     $app->put(
         '/runner/:id', 'updateRunner'
     );

@@ -1,0 +1,46 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+            Inscriere alergatori companii
+          </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Acasa</a></li>
+        <li><a href="#">Formulare</a></li>
+        <li><a href="#">Alergatori</a></li>
+        <li><a href="#">Companii</a></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Introdu datele alergatorilor in format JSON</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form" name="addCompanyRunnersForm">
+                    <div class="box-body">
+                        <div class="form-group col-md-6">
+                            <label for="companyRunners">Date alergatori*</label>
+                            <textarea rows="10" cols="80" type="text" class="form-control" id="companyRunners" placeholder="Date in format valid JSON" ng-model="companyRunners" required>
+                            </textarea>
+                        </div>
+                        <div class="box-body"></div>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary" ng-click="addRunners()" ng-disabled="addCompanyRunnersForm.$invalid">Trimite</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
