@@ -89,3 +89,18 @@
 .filter-field {
     margin-left: 70px;
 }
+
+.active-filters {
+    margin: 10px 0 16px 0;
+}
+
+.active-filters .col-sm-2 {
+    font-weight: bold;
+    color: #555555;
+}
+
+.active-filters .fa-close {
+    color: darkred;
+    margin-left: 6px;
+    cursor: pointer;
+}

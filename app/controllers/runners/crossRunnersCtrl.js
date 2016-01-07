@@ -9,12 +9,13 @@ crossRunners.controller('crossRunnersCtrl', ['$scope', '$http', '$window', 'comm
 
             
             $scope.crossRunners = response;
+            $scope.filtered = [];
             
             $scope.getTotal = function() {
                 var total = 0;
              
-                    for (var i = 0; i < $scope.crossRunners.length; i++) {
-                        var runner = $scope.crossRunners[i];
+                    for (var i = 0; i < $scope.filtered.length; i++) {
+                        var runner = $scope.filtered[i];
                         total += parseInt(runner.taxa);
                     }
           
@@ -46,4 +47,11 @@ crossRunners.controller('crossRunnersCtrl', ['$scope', '$http', '$window', 'comm
     $scope.criteria = ["Nume", "Prenume", "Proiect", "Platit", "Tip plata"];
     $scope.statusPlati = ["0", "1"];
     $scope.paymentMethods = ["cash", "online", "transfer", "sponsor", "voucher"];
+    $scope.selected = {};
+    $scope.selected.criteria = "";
+    $scope.selected.name = "";
+    $scope.selected.forname = "";
+    $scope.selected.project = "";
+    $scope.selected.payment = "";
+    $scope.selected.paymentMethod = "";
 }]);

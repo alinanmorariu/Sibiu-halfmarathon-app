@@ -28,12 +28,12 @@ adultRunners.controller('adultRunnersCtrl', ['$scope', '$http', '$window', 'comm
             $scope.sortType     = 'alergatorID'; 
             $scope.sortReverse  = false;
             
+            $scope.filtered = [];
             
             $scope.getTotal = function() {
                 var total = 0;
-             
-                    for (var i = 0; i < $scope.adultRunners.length; i++) {
-                        var runner = $scope.adultRunners[i];
+                    for (var i = 0; i < $scope.filtered.length; i++) {
+                        var runner = $scope.filtered[i];
                         total += parseInt(runner.taxa);
                     }
           
@@ -64,6 +64,13 @@ adultRunners.controller('adultRunnersCtrl', ['$scope', '$http', '$window', 'comm
     $scope.criteria = ["Nume", "Prenume", "Proiect", "Platit", "Tip plata"];
     $scope.statusPlati = ["0", "1"];
     $scope.paymentMethods = ["cash", "online", "transfer", "sponsor", "voucher"];
+    $scope.selected = {};
+    $scope.selected.criteria = "";
+    $scope.selected.name = "";
+    $scope.selected.forname = "";
+    $scope.selected.project = "";
+    $scope.selected.payment = "";
+    $scope.selected.paymentMethod = "";
 }]);
 
 adultRunners.controller('modalAdultRunnerCtrl', ['$scope', '$uibModal', '$http',

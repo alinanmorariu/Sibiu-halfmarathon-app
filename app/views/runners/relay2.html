@@ -21,7 +21,7 @@
                 <div class="box-body table-container">
                     <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
                         <div class="row">
-                                    <div class="col-sm-6">
+                            <div class="col-sm-6">
                                 <div class="col-sm-2"><p>Filtreaza dupa:</p></div>
                                 <div class="col-sm-2">
                                     <select ng-model="selected.criteria">
@@ -30,27 +30,49 @@
                                     </select>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="text" class="form-control filter-field" placeholder="Introdu numele" ng-show="selected.criteria=='Nume'">
-                                    <input type="text" class="form-control filter-field" placeholder="Introdu prenumele" ng-show="selected.criteria=='Prenume'">
-                                    <select id="proiectAles" name="proiectAles" type="text" class="form-control filter-field" ng-show="selected.criteria=='Proiect'">
+                                    <input type="text" class="form-control filter-field" placeholder="Introdu numele" ng-show="selected.criteria=='Nume'" ng-model="selected.name">
+                                    <input type="text" class="form-control filter-field" placeholder="Introdu prenumele" ng-show="selected.criteria=='Prenume'" ng-model="selected.forname">
+                                    <select id="proiectAles" name="proiectAles" type="text" class="form-control filter-field" ng-show="selected.criteria=='Proiect'" ng-model="selected.project">
                                         <option value="">Alege...</option>
                                         <option ng-repeat="project in projects">{{project.proiectID}}</option>
                             </select>
-                                    <select id="platit" name="platit" type="text" class="form-control filter-field" ng-show="selected.criteria=='Platit'">
+                                    <select id="platit" name="platit" type="text" class="form-control filter-field" ng-show="selected.criteria=='Platit'" ng-model="selected.payment">
                                         <option value="">Alege...</option>
                                         <option ng-repeat="statusPlata in statusPlati">{{statusPlata}}</option>
                             </select>
-                                    <select id="paymenMethod" name="paymentMethod" type="text" class="form-control filter-field" ng-show="selected.criteria=='Tip plata'">
+                                    <select id="paymenMethod" name="paymentMethod" type="text" class="form-control filter-field" ng-show="selected.criteria=='Tip plata'" ng-model="selected.paymentMethod">
                                         <option value="">Alege...</option>
                                         <option ng-repeat="paymentMethod in paymentMethods">{{paymentMethod}}</option>
                             </select>
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <p id="highlighted-content">Total alergatori stafeta 2x10 km: {{relay2Runners.length}}</p>
+                                <p id="highlighted-content">Total alergatori: {{filtered.length}}</p>
                             </div>
                             <div class="col-sm-3">
-                                <p id="highlighted-content">Total taxe Stafeta 2x10 km: {{ getTotal() }} RON</p>
+                                <p id="highlighted-content">Total taxe: {{ getTotal(); }} RON</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 active-filters">
+                                <div class="col-sm-2" ng-show="selected.criteria!=''">
+                                    Filtre active:
+                                </div>
+                                 <div class="col-sm-2" ng-show="selected.name!=''">
+                                    <span>Nume : {{selected.name}}</span><span><a type="button" ng-click="selected.name = ''"><i class="fa fa-fw fa-close"></i></i></a></span>
+                                </div>
+                                 <div class="col-sm-2" ng-show="selected.forname!=''">
+                                     <span>Prenume : {{selected.forname}}</span><span><a type="button" ng-click="selected.forname = ''"><i class="fa fa-fw fa-close"></i></i></a></span>
+                                </div>
+                                 <div class="col-sm-2" ng-show="selected.project!=''">
+                                     <span>Proiect : {{selected.project}}</span><span><a type="button" ng-click="selected.project = ''"><i class="fa fa-fw fa-close"></i></i></a></span>
+                                </div>
+                                 <div class="col-sm-2" ng-show="selected.payment!=''">
+                                    <span>Platit : {{selected.payment}}</span><span><a type="button" ng-click="selected.payment = ''"><i class="fa fa-fw fa-close"></i></i></a></span>
+                                </div>
+                                 <div class="col-sm-2" ng-show="selected.paymentMethod!=''">
+                                    <span>Tip plata : {{selected.paymentMethod}}</span><span><a type="button" ng-click="selected.paymentMethod = ''"><i class="fa fa-fw fa-close"></i></i></a></span>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -71,7 +93,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr ng-repeat="relay2Runner in relay2Runners | orderBy:sortType:sortReverse" >
+                                        <tr ng-repeat="relay2Runner in filtered = (relay2Runners  | filter:{nume:selected.name, prenume:selected.forname, proiectAles:selected.project, platit:selected.payment, tipPlata:selected.paymentMethod} | orderBy:sortType:sortReverse)" >
                                             <td>{{relay2Runner.alergatorID}}</td>
                                             <td>{{relay2Runner.prenume}}</td>
                                             <td>{{relay2Runner.nume}}</td>

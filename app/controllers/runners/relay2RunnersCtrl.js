@@ -9,12 +9,13 @@ relay2Runners.controller('relay2RunnersCtrl', ['$scope', '$http', '$window', 'co
 
             
             $scope.relay2Runners = response;
+            $scope.filtered = [];
             
             $scope.getTotal = function() {
                 var total = 0;
              
-                    for (var i = 0; i < $scope.relay2Runners.length; i++) {
-                        var runner = $scope.relay2Runners[i];
+                    for (var i = 0; i < $scope.filtered.length; i++) {
+                        var runner = $scope.filtered[i];
                         total += parseInt(runner.taxa);
                     }
           
@@ -47,4 +48,11 @@ relay2Runners.controller('relay2RunnersCtrl', ['$scope', '$http', '$window', 'co
     $scope.criteria = ["Nume", "Prenume", "Proiect", "Platit", "Tip plata"];
     $scope.statusPlati = ["0", "1"];
     $scope.paymentMethods = ["cash", "online", "transfer", "sponsor", "voucher"];
+    $scope.selected = {};
+    $scope.selected.criteria = "";
+    $scope.selected.name = "";
+    $scope.selected.forname = "";
+    $scope.selected.project = "";
+    $scope.selected.payment = "";
+    $scope.selected.paymentMethod = "";
 }]);
