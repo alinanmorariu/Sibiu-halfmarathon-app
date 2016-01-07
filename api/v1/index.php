@@ -57,6 +57,10 @@
     );
 
     $app->get(
+        '/runners/companies', 'getCompaniesRunners'
+    );
+
+    $app->get(
         '/runner/:id', 'getRunner'
     );
 

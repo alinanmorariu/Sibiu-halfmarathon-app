@@ -52,4 +52,8 @@
         echo getListByCriteria('ALERGATORI', 'cursa = "4"', 'timestamp');
     }
 
+    function getCompaniesRunners () { 
+        echo getListByCriteria('ALERGATORI', 'companie != ""', 'timestamp');
+    }
+
 ?>
