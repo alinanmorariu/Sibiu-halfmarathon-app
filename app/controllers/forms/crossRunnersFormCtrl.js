@@ -10,6 +10,9 @@ crossRunnersForm.controller('crossRunnersFormCtrl', ['$scope', '$http', '$window
             $scope.newRunner.record = "";
             $scope.newRunner.tipPlata = "";
             $scope.newRunner.companie = "";
+            $scope.newRunner.confirmat = 0;
+            $scope.newRunner.platit = 0;
+            $scope.newRunner.ordine_stafeta = 0;
             $scope.addRunner = function() {
                 $http.post('../api/v1/index.php/runners/adults', $scope.newRunner).success(function(response) {
                     alert('Inscrierea ta a fost inregistrata cu succes! In perioada care urmeaza vei primi pe email detalii legate de participarea ta la Semimaraton Sibiu 2016.');

@@ -76,6 +76,9 @@ companiesRunners.controller('companiesRunnersCtrl', ['$scope', '$http', '$window
     $scope.selected.payment = "";
     $scope.selected.companie = "";
     $scope.selected.cursa = "";
+    $scope.newRunner.confirmat = 0;
+    $scope.newRunner.platit = 0;
+    $scope.newRunner.ordine_stafeta = 0;
     
     $scope.clearFilters = function() {
         $scope.selected.criteria = "";

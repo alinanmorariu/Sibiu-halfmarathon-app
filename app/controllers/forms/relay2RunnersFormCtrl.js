@@ -30,6 +30,8 @@ relay2RunnersForm.controller('relay2RunnersFormCtrl', ['$scope', '$http', '$wind
     $scope.firstRunner.record = $scope.secondRunner.record = "";
     $scope.firstRunner.tipPlata = $scope.secondRunner.tipPlata = "";
     $scope.firstRunner.companie = $scope.secondRunner.companie = "";
+    $scope.firstRunner.confirmat = $scope.secondRunner.confirmat = 0;
+    $scope.firstRunner.platit = $scope.secondRunner.platit = 0;
     $scope.firstRunner.ordine_stafeta = 1;
     $scope.secondRunner.ordine_stafeta = 2;
     

@@ -84,6 +84,10 @@
         '/runners/company', 'addListOfRunners'
     );
 
+    $app->post(
+        '/runners/children', 'addRunner'
+    );
+
     $app->put(
         '/runner/:id', 'updateRunner'
     );

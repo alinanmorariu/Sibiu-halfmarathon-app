@@ -31,6 +31,8 @@ relay4RunnersForm.controller('relay4RunnersFormCtrl', ['$scope', '$http', '$wind
     $scope.firstRunner.record = $scope.secondRunner.record = $scope.thirdRunner.record = $scope.fourthRunner.record = "";
     $scope.firstRunner.tipPlata = $scope.secondRunner.tipPlata = $scope.thirdRunner.tipPlata = $scope.fourthRunner.tipPlata = "";
     $scope.firstRunner.companie = $scope.secondRunner.companie = $scope.thirdRunner.companie = $scope.fourthRunner.companie = "";
+    $scope.firstRunner.confirmat = $scope.secondRunner.confirmat = $scope.thirdRunner.confirmat = $scope.fourthRunner.confirmat = 0;
+    $scope.firstRunner.platit = $scope.secondRunner.platit = $scope.thirdRunner.platit = $scope.fourthRunner.platit = 0;
     $scope.firstRunner.ordine_stafeta = 1;
     $scope.secondRunner.ordine_stafeta = 2;
     $scope.thirdRunner.ordine_stafeta = 3;
