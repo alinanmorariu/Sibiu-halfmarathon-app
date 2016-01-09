@@ -56,4 +56,9 @@
         echo getListByCriteria('ALERGATORI', 'companie != ""', 'timestamp');
     }
 
+    function getChildrenRunners () { 
+        echo getListByCriteria('ALERGATORI', 'cursa = "5" OR cursa = "6" OR cursa = "7"', 'timestamp');
+    }
+
+
 ?>

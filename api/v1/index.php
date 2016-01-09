@@ -61,6 +61,10 @@
     );
 
     $app->get(
+        '/runners/children', 'getChildrenRunners'
+    );
+
+    $app->get(
         '/runner/:id', 'getRunner'
     );
 
