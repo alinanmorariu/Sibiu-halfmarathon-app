@@ -20,90 +20,16 @@
                 <div class="box-body">
                     <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
                         <div class="row">
-                            <!--<div class="col-sm-2">
-                                <div class="dataTables_length" id="example1_length">
-                                    <label>Arata
-                                        <select name="example1_length" aria-controls="example1" class="form-control input-sm">
-                                            <option value="10">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                        </select></label>
-                                </div>
+                            <div class="col-sm-12">
+                                <div class="col-sm-4">
+                                <p id="highlighted-content">Total proiecte: {{projects.length}}</p>
                             </div>
-                            <div class="col-sm-2">
-                                <div id="example1_filter" class="dataTables_filter">
-                                    <button type="button" class="btn btn-warning" ng-click="isCollapsed = !isCollapsed"><i class="fa fa-filter"></i>&nbsp;&nbsp;Filtreaza date</button>
-                                </div>
+                            <div class="col-sm-4">
+                                <p id="highlighted-content">Total sume propuse: {{ getTotal(); }} RON</p>
                             </div>
-                                <div class="col-sm-2">
-                                <div id="example1_filter" class="dataTables_filter">
-                                    <button type="button" class="btn btn-success" ng-click="refresh()"><i class="fa fa-refresh"></i>&nbsp;&nbsp;Reincarca</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <p id="highlighted-content">Numar proiecte: {{projects.length}}</p>
-                            </div>
-                            <div class="col-sm-3">
-                                <p id="highlighted-content">Suma totala: {{ getTotal() }} RON</p>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div uib-collapse="isCollapsed">
-                                    <div class="well well-lg">
-                                        <form role="form" name="filterProjectsForm">
-                                            
-                                            <div class="filter-field col-md-6">
-                                                <label for="project" class="toggled-label">Proiect</label>
-                                                <div class="input-group input-group-sm toggled-field">
-                                                    <input type="text" class="form-control" id="project" ng-model="userInput.proiect">
-                                                    <span class="input-group-btn">
-                      <button class="btn btn-default btn-flat" type="button" ng-click="userInput.proiect = ''">x</button>
-                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="filter-field col-md-6">
-                                                <label for="ngo" class="toggled-label">Organizatie</label>
-                                                <div class="input-group input-group-sm toggled-field">
-                                                    <input type="text" class="form-control" id="ngo" ng-model="userInput.organizatie">
-                                                    <span class="input-group-btn">
-                      <button class="btn btn-default btn-flat" type="button" ng-click="userInput.organizatie = ''">x</button>
-                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="filter-field col-md-6">
-                                                <label for="suma_propusa" class="toggled-label">Suma propusa</label>
-                                                <div class="form-group">
-                      <select class="input-group-sm filter-dropdown-sm" ng-model="comparisonSign" ng-options="comparisonSign.name for comparisonSign in comparisonSignsList">
-                      </select>
-                    </div>
-                                                <div class="input-group input-group-sm filter-field-sm">
-                                                    <input type="text" class="form-control" id="suma_propusa" ng-model="sum.suma_propusa" pattern="[0-9]+">
-                                                    <span class="input-group-btn">
-                      <button class="btn btn-default btn-flat" type="button" ng-click="sum.suma_propusa = ''">x</button>
-                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="filter-field col-md-6">
-                                                <label for="url" class="toggled-label">URL</label>
-                                                <div class="input-group input-group-sm toggled-field">
-                                                    <input type="text" class="form-control" id="url" ng-model="userInput.url">
-                                                    <span class="input-group-btn">
-                      <button class="btn btn-default btn-flat" type="button" ng-click="userInput.url = ''">x</button>
-                    </span>
-                                                </div>
-                                            </div> 
-                                            <div>
-                                            <button type="submit" class="btn btn-default" ng-click="resetAllFilters()" style="margin-left:16px">Reseteaza</button>
-                                            
-                                                <button type="submit" class="btn btn-warning" ng-click="applyFilter()" style="margin-left:10px">Aplica filtru</button>
-                                           </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
+                            
                         <div class="row">
                             <div class="col-sm-12">
                                 <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
@@ -151,26 +77,6 @@
                                 </table>
                             </div>
                         </div>
-                        <!--<div class="row">
-                            <div class="col-sm-5">
-                                <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
-                            </div>
-                            <div class="col-sm-7">
-                                <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
-                                    <ul class="pagination">
-                                        <li class="paginate_button previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0">Previous</a></li>
-                                        <li class="paginate_button active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0">1</a></li>
-                                        <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0">2</a></li>
-                                        <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0">3</a></li>
-                                        <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="4" tabindex="0">4</a></li>
-                                        <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="5" tabindex="0">5</a></li>
-                                        <li class="paginate_button "><a href="#" aria-controls="example1" data-dt-idx="6" tabindex="0">6</a></li>
-                                        <li class="paginate_button next" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0">Next</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>-->
-                    </div>
                 </div>
                 <!-- /.box-body -->
             </div>

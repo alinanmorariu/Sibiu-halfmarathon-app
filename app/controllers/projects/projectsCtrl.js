@@ -8,19 +8,13 @@ projects.controller('projectsCtrl', ['$scope', '$http', '$window', 'commonServic
         $http.get('../api/v1/index.php/projects').success(function(response) {
 
             $scope.projects = response;
-                        $scope.getTotal = function() {
+            $scope.getTotal = function() {
                 var total = 0;
-                if ($scope.filtered) {
-                    for (var i = 0; i < $scope.filtered.length; i++) {
-                        var project = $scope.filtered[i];
-                        total += parseInt(project.suma_propusa);
-                    }
-                } else {
                     for (var i = 0; i < $scope.projects.length; i++) {
                         var project = $scope.projects[i];
                         total += parseInt(project.suma_propusa);
                     }
-                }
+          
                 return total;
             }
         });

@@ -1,0 +1,71 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+            Curse
+          </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Acasa</a></li>
+        <li><a href="#">Curse</a></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th style="width: 20%;"><a href="#races" ng-click="sortType = 'cursaID'; sortReverse = !sortReverse">ID <i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'cursaID' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'cursaID' && sortReverse"></i></a></th>
+                                            <th style="width: 60%"><a href="#races" ng-click="sortType = 'cursa'; sortReverse = !sortReverse">Cursa <i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'cursa' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'cursa' && sortReverse"></i></a></th>
+                                            <th style="width: 20%;"><a href="#races" ng-click="sortType = 'taxa'; sortReverse = !sortReverse">Taxa <i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'taxa' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'taxa' && sortReverse"></i></a></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="race in races | orderBy:sortType:sortReverse">
+                                            <td>{{race.cursaID}}</td>
+                                            <td>{{race.cursa}}</td>
+                                            <td>{{race.taxa}}</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th rowspan="1" colspan="1">ID</th>
+                                            <th rowspan="1" colspan="1">Cursa</th>
+                                            <th rowspan="1" colspan="1">Taxa</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>                 
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+<!-- page script -->
+<!--<script>
+    $(function() {
+        $('#example1').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false
+        });
+    });
+</script>-->

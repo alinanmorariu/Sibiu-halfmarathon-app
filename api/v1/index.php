@@ -73,6 +73,10 @@
     );
 
     $app->get(
+        '/races', 'getRaces'
+    );
+
+    $app->get(
         '/runner/:id', 'getRunner'
     );
 
