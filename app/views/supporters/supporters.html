@@ -1,0 +1,184 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+            Sustinatori
+          </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Acasa</a></li>
+        <li><a href="#">Sustinatori</a></li>
+        <li><a href="#">Individuali</a></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-container">
+                    <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="col-sm-2">
+                                    <p>Filtreaza dupa:</p>
+                                </div>
+                                <div class="col-sm-2">
+                                    <select ng-model="selected.criteria">
+                                        <option value="">Alege criteriul...</option>
+                                        <option ng-repeat="crit in criteria">{{crit}}</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control filter-field" placeholder="Introdu numele" ng-show="selected.criteria=='Nume'" ng-model="selected.name">
+                                    <input type="text" class="form-control filter-field" placeholder="Introdu prenumele" ng-show="selected.criteria=='Prenume'" ng-model="selected.forname">
+                                    <select id="proiectAles" name="proiectAles" type="text" class="form-control filter-field" ng-show="selected.criteria=='Proiect'" ng-model="selected.project">
+                                        <option value="">Alege...</option>
+                                        <option ng-repeat="project in projects">{{project.proiectID}}</option>
+                                    </select>
+                                    <select id="cursa" name="cursa" type="text" class="form-control filter-field" ng-show="selected.criteria=='Cursa'" ng-model="selected.cursa">
+                                        <option value="">Alege...</option>
+                                        <option ng-repeat="race in races">{{race}}</option>
+                                    </select>
+                                    <select id="platit" name="platit" type="text" class="form-control filter-field" ng-show="selected.criteria=='Platit'" ng-model="selected.payment">
+                                        <option value="">Alege...</option>
+                                        <option ng-repeat="statusPlata in statusPlati">{{statusPlata}}</option>
+                                    </select>
+                                    <select id="paymenMethod" name="paymentMethod" type="text" class="form-control filter-field" ng-show="selected.criteria=='Tip plata'" ng-model="selected.paymentMethod">
+                                        <option value="">Alege...</option>
+                                        <option ng-repeat="paymentMethod in paymentMethods">{{paymentMethod}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <p id="highlighted-content">Total sustinatori: {{filtered.length}}</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p id="highlighted-content">Total sume promise: {{ getTotal(); }} RON</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2 clear-filters">
+                                <button class="btn btn-warning" ng-click="export()">Exporta Excel</button>
+                            </div>
+                        </div>
+                        <div class="row" ng-show="selected.criteria!=''">
+                            <div class="col-sm-12 active-filters">
+                                <div class="col-sm-2">
+                                    Filtre active:
+                                </div>
+                                <div class="col-sm-2" ng-show="selected.name!=''">
+                                    <span>Nume : {{selected.name}}</span><span><a type="button" ng-click="selected.name = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                </div>
+                                <div class="col-sm-2" ng-show="selected.forname!=''">
+                                    <span>Prenume : {{selected.forname}}</span><span><a type="button" ng-click="selected.forname = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                </div>
+                                <div class="col-sm-2" ng-show="selected.project!=''">
+                                    <span>Proiect : {{selected.project}}</span><span><a type="button" ng-click="selected.project = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                </div>
+                                <div class="col-sm-2" ng-show="selected.cursa!=''">
+                                    <span>Cursa : {{selected.cursa}}</span><span><a type="button" ng-click="selected.cursa = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                </div>
+                                <div class="col-sm-2" ng-show="selected.payment!=''">
+                                    <span>Platit : {{selected.payment}}</span><span><a type="button" ng-click="selected.payment = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                </div>
+                                <div class="col-sm-2" ng-show="selected.paymentMethod!=''">
+                                    <span>Tip plata : {{selected.paymentMethod}}</span><span><a type="button" ng-click="selected.paymentMethod = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                </div>
+                                <div class="col-sm-2 clear-filters" ng-show="selected.name!='' || selected.forname!='' || selected.project!='' || selected.payment!='' || selected.paymentMethod!='' || selected.cursa!=''">
+                                    <span><button class="btn" id="clear-filters" type="button" ng-click="clearFilters()">Sterge toate filtrele</button></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th><a href="#supporters" ng-click="sortType = 'sustinatorID'; sortReverse = !sortReverse">ID <i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'sustinatorID' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'sustinatorID' && sortReverse"></i></a></th>
+                                            <th><a href="#supporters" ng-click="sortType = 'prenume'; sortReverse = !sortReverse">Prenume<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'prenume' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'prenume' && sortReverse"></i></a></th>
+                                            <th><a href="#supporters" ng-click="sortType = 'nume'; sortReverse = !sortReverse">Nume<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'nume' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'nume' && sortReverse"></i></a></th>
+                                            <th><a href="#supporters" ng-click="sortType = 'telefon'; sortReverse = !sortReverse">Telefon<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'telefon' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'telefon' && sortReverse"></i></a></th>
+                                            <th><a href="#supporters" ng-click="sortType = 'email'; sortReverse = !sortReverse">Email<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'email' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'email' && sortReverse"></i></a></th>
+                                            <th><a href="#supporters" ng-click="sortType = 'adresa'; sortReverse = !sortReverse">Adresa<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'adresa' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'adresa' && sortReverse"></i></a></th>
+                                            <th><a href="#supporters" ng-click="sortType = 'localitate'; sortReverse = !sortReverse">Localitate<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'localitate' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'localitate' && sortReverse"></i></a></th>
+                                            <th><a href="#supporters" ng-click="sortType = 'sustin'; sortReverse = !sortReverse">Sustin<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'sustin' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'sustin' && sortReverse"></i></a></th>
+                                            <th><a href="#supporters" ng-click="sortType = 'suma'; sortReverse = !sortReverse">Suma<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'suma' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'suma' && sortReverse"></i></a></th>
+                                            <th><a href="#supporters" ng-click="sortType = 'fixa'; sortReverse = !sortReverse">Fixa<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'fixa' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'fixa' && sortReverse"></i></a></th>
+                                            <th><a href="#supporters" ng-click="sortType = 'promisi'; sortReverse = !sortReverse">Promisi<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'promisi' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'promisi' && sortReverse"></i></a></th>
+                                            <th><a href="#supporters" ng-click="sortType = 'suma_platita'; sortReverse = !sortReverse">Suma platita<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'suma_platita' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'suma_platita' && sortReverse"></i></a></th>
+                                            <th><a href="#supporters" ng-click="sortType = 'platiti'; sortReverse = !sortReverse">Platiti<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'platiti' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'platiti' && sortReverse"></i></a></th>
+                                            <th><a href="#supporters" ng-click="sortType = 'tipPlata'; sortReverse = !sortReverse">Tip plata<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'tipPlata' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'tipPlata' && sortReverse"></i></a></th>
+                                            <th>Edit</th>
+                                            <th>Dlt</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="supporter in filtered = (supporters  | filter:{nume:selected.name, prenume:selected.forname, proiectAles:selected.project, platit:selected.payment, tipPlata:selected.paymentMethod, cursa:selected.cursa} | orderBy:sortType:sortReverse)">
+                                            <td>{{supporter.sustinatorID}}</td>
+                                            <td>{{supporter.prenume}}</td>
+                                            <td>{{supporter.nume}}</td>
+                                            <td>{{supporter.telefon}}</td>
+                                            <td>{{supporter.email}}</td>
+                                            <td>{{supporter.adresa}}</td>
+                                            <td>{{supporter.localitate}}</td>
+                                            <td>{{supporter.sustin}}</td>
+                                            <td>{{supporter.suma}}</td>
+                                            <td>{{supporter.fixa}}</td>
+                                            <td>{{supporter.promisi}}</td>
+                                            <td>{{supporter.suma_platita}}</td>
+                                            <td>{{supporter.platiti}}</td>
+                                            <td>{{supporter.tipPlata}}</td>
+                                            <td>
+                                                <div class="tools" ng-controller="modalSupporterCtrl">
+                                                    <a ng-click="open(supporter.sustinatorID)"><i class="fa fa-edit edit-icon"></i></a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="tools">
+                                                    <a ng-click="delete(supporter.sustinatorID)"><i class="fa fa-trash-o delete-icon"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th rowspan="1" colspan="1">ID</th>
+                                            <th rowspan="1" colspan="1">Prenume</th>
+                                            <th rowspan="1" colspan="1">Nume</th>
+                                            <th rowspan="1" colspan="1">Telefon</th>
+                                            <th rowspan="1" colspan="1">Email</th>
+                                            <th rowspan="1" colspan="1">Adresa</th>
+                                            <th rowspan="1" colspan="1">Localitate</th>
+                                            <th rowspan="1" colspan="1">Sustin</th>
+                                            <th rowspan="1" colspan="1">Suma</th>
+                                            <th rowspan="1" colspan="1">Fixa</th>
+                                            <th rowspan="1" colspan="1">Promisi</th>
+                                            <th rowspan="1" colspan="1">Suma platita</th>
+                                            <th rowspan="1" colspan="1">Platiti</th>
+                                            <th rowspan="1" colspan="1">Tip plata</th>
+                                            <th rowspan="1" colspan="1">Edit</th>
+                                            <th rowspan="1" colspan="1">Dlt</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2 clear-filters">
+                                <button class="btn btn-warning" ng-click="export()">Exporta Excel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->

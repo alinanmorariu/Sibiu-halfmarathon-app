@@ -1,0 +1,263 @@
+<div class="modal-header">
+    <button type="button" class="close" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">×</span></button>
+    <h4 class="modal-title">Modifica sustinator</h4>
+</div>
+<div class="modal-body">
+    <form name="modifySupporterForm">
+        <table class="modal-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="label-column">
+                        <div class="form-group">
+                            <label class="form-label">ID</label>
+                        </div>
+                    </td>
+                    <td class="field-column">
+                        <div class="form-group">
+                            {{supporter.sustinatorID}}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column">
+                        <div class="form-group">
+                            <label for="prenume" class="form-label">Prenume</label>
+                        </div>
+                    </td>
+                    <td class="field-column">
+                        <div class="form-group">
+                            <input id="prenume" name="prenume" type="text" class="form-control" placeholder="Prenume" ng-model="supporter.prenume">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column">
+                        <div class="form-group">
+                            <label for="nume" class="form-label">Nume</label>
+                        </div>
+                    </td>
+                    <td class="field-column">
+                        <div class="form-group">
+                            <input id="nume" name="nume" type="text" class="form-control" placeholder="Nume" ng-model="supporter.nume">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column">
+                        <div class="form-group">
+                            <label for="Observatii" class="form-label">Observatii</label>
+                        </div>
+                    </td>
+                    <td class="field-column">
+                            <div class="form-group">
+                            <textarea rows="4" cols="50" id="Observatii" name="Observatii" type="text" class="form-control" placeholder="Observatii" ng-model="supporter.observatii"></textarea>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="companie" class="form-label">Companie</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="companie" name="companie" type="text" class="form-control" ng-model="supporter.companie">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="telefon" class="form-label">Telefon</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="telefon" name="telefon" type="text" class="form-control" placeholder="telefon" ng-model="supporter.telefon">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="email" class="form-label">Email</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="email" name="email" type="email" class="form-control" placeholder="Ordine stafeta" ng-model="supporter.email">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="adresa" class="form-label">Adresa</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="adresa" name="adresa" type="text" class="form-control" placeholder="Compania" ng-model="supporter.adresa">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="localitate" class="form-label">Localitate</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="localitate" name="localitate" type="text" class="form-control" placeholder="Localitatea" ng-model="supporter.localitate">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="sustin" class="form-label">Sustin</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="sustin" name="sustin" type="text" class="form-control" placeholder="sustin" ng-model="supporter.sustin">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="suma" class="form-label">Suma</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="suma" name="suma" type="suma" class="form-control" placeholder="suma" ng-model="supporter.suma">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="fixa" class="form-label">Fixa</label>
+                        </div>
+                    </td>
+                    <td class="field-column">
+                            <select id="fixa" name="fixa" type="text" class="form-control" placeholder="fixa" ng-model="supporter.fixa">
+                                <option ng-repeat="fixedSum in fixedSums">{{fixedSum}}</option>
+                            </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="promisi" class="form-label">Promisi</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="promisi" name="promisi" type="text" class="form-control" placeholder="promisi" ng-model="supporter.promisi">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="suma_platita" class="form-label">Suma platita</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="suma_platita" name="suma_platita" type="text" class="form-control" placeholder="suma_platita" ng-model="supporter.suma_platita">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="platiti" class="form-label">Platiti</label>
+                        </div>
+                    </td>
+                    </td>
+                    <td class="field-column">
+                            <select id="platiti" name="platiti" type="text" class="form-control" placeholder="Proiect ales" ng-model="supporter.platiti">
+                                <option ng-repeat="payment in payments">{{payment}}</option>
+                            </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="tipPlata" class="form-label">Tip plata</label>
+                        </div>
+                    </td>
+                    <td class="field-column">
+                            <select id="tipPlata" name="tipPlata" type="text" class="form-control" placeholder="Tip plata" ng-model="supporter.tipPlata" ng-change="changeTax()">
+                                <option ng-repeat="paymentMethod in paymentMethods">{{paymentMethod}}</option>
+                            </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="documentJustificativ" class="form-label">Document justificativ</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="documentJustificativ" name="documentJustificativ" type="text" class="form-control" placeholder="Document justificativ" ng-model="supporter.documentJustificativ">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="dataPlata" class="form-label">Data platii</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input id="dataPlata" name="dataPlata" type="text" class="form-control" placeholder="Data platii" ng-model="supporter.dataPlata">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="anonim" class="form-label">Anonim</label>
+                        </div>
+                    </td>
+                    <td class="field-column">
+                            <select id="anonim" name="anonim" type="text" class="form-control" placeholder="Marime tricou" ng-model="supporter.anonim">
+                                <option ng-repeat="anonim in anonims">{{anonim}}</option>
+                            </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-column">
+                        <div class="form-group" class="label-column">
+                            <label for="contactOrganizatie" class="form-label">Contact organizatie</label>
+                        </div>
+                    </td>
+                    <td class="field-column">
+                            <select id="contactOrganizatie" name="contactOrganizatie" type="text" class="form-control" placeholder="Contact organizatie" ng-model="supporter.contactOrganizatie">
+                                <option ng-repeat="contactOrg in contactOrgs">{{contactOrg}}</option>
+                            </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" ng-click="cancel()">Cancel</button>
+        <button class="btn btn-primary" ng-click="save()" ng-disabled="modifySupporterForm.$invalid">Salveaza</button>
+    </div>

@@ -69,14 +69,6 @@
     );
 
     $app->get(
-        '/fundraisers', 'getFundraisers'
-    );
-
-    $app->get(
-        '/races', 'getRaces'
-    );
-
-    $app->get(
         '/runner/:id', 'getRunner'
     );
 
@@ -106,6 +98,22 @@
 
     $app->delete(
         '/runner/:id', 'deleteRunner'
+    );
+
+$app->get(
+        '/fundraisers', 'getFundraisers'
+    );
+
+    $app->get(
+        '/races', 'getRaces'
+    );
+
+    $app->get(
+        '/supporters', 'getSupporters'
+    );
+
+    $app->get(
+        '/supporter/:id', 'getSupporter'
     );
 
     $app->run();

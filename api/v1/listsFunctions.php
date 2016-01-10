@@ -72,6 +72,10 @@
         echo getList('CURSE', 'cursaID');
     }
 
+    function getSupporters () { 
+        echo getList('SUSTINATORI', 'sustinatorID');
+    }
+
 
 
 ?>

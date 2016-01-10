@@ -24,6 +24,11 @@ function getRunner($id) {
     echo getItemFromList ('ALERGATORI', 'alergatorID', $id);
 }
 
+//get one supporter by id
+function getSupporter($id) {
+    echo getItemFromList ('SUSTINATORI', 'sustinatorID', $id);
+}
+
 //add a new project to the DB
 function addProject() {
     global $app;
@@ -116,37 +121,6 @@ function addListOfRunners() {
         echo 'ERROR: ' . $e->getMessage();
     }  
 }
-
-/*function addChildRunner() {
-    global $app;
-    $request = $app->request();
-    $runner = json_decode($request->getBody());
-    $sql = "INSERT INTO alergatori (prenume, nume, categorie, datanasterii, companie, localitate, telefon, email, cursa, record, proiectAles, marimeTricou, taxa, tipPlata) VALUES (:prenume, :nume, :categorie, :datanasterii, :companie, :localitate, :telefon, :email, :cursa, :record, :proiectAles, :marimeTricou, :taxa, :tipPlata)";
-    try {
-        $db = getConnection();
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam("prenume", $runner->prenume);
-        $stmt->bindParam("nume", $runner->nume);
-        $stmt->bindParam("categorie", $runner->categorie);
-        $stmt->bindParam("datanasterii", $runner->datanasterii);
-        $stmt->bindParam("companie", $runner->companie);
-        $stmt->bindParam("localitate", $runner->localitate);
-        $stmt->bindParam("telefon", $runner->telefon);
-        $stmt->bindParam("email", $runner->email);
-        $stmt->bindParam("cursa", $runner->cursa);
-        $stmt->bindParam("record", $runner->record);
-        $stmt->bindParam("proiectAles", $runner->proiectAles);
-        $stmt->bindParam("marimeTricou", $runner->marimeTricou);
-        $stmt->bindParam("taxa", $runner->taxa);
-        $stmt->bindParam("tipPlata", $runner->tipPlata);
-        $stmt->execute();
-        $runner->alergatorID = $db->lastInsertId();
-        $db = null;
-        echo json_encode(utf8ize($runner));
-    } catch(PDOException $e) {
-        echo '{"error":{"text":'. $e->getMessage() .'}}';
-    }
-}*/
 
 //update project
 
