@@ -64,6 +64,12 @@
                             <div class="col-sm-3">
                                 <p id="highlighted-content">Total sume promise: {{ getTotal(); }} RON</p>
                             </div>
+                            <div class="col-sm-3" style="float:right">
+                                <p id="highlighted-content-success">Total sume platite: {{ getTotalPayed(); }} RON</p>
+                            </div>
+                            <div class="col-sm-3" style="float:right">
+                                <p id="highlighted-content-danger">Total sume neplatite: {{ getTotalNotPayed(); }} RON</p>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-2 clear-filters">

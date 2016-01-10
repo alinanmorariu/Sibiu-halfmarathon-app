@@ -2,14 +2,24 @@
     margin-right: 20px;
 }
 
-#highlighted-content {
+#highlighted-content, #highlighted-content-success, #highlighted-content-danger {
     padding: 10px;
     color: #ffffff;
-    background-color: #00acd6;
     font-weight: bold;
     text-align: center;
 }
 
+#highlighted-content {
+    background-color: #00acd6;
+}
+
+#highlighted-content-success {
+    background-color: #00a65a;
+}
+
+#highlighted-content-danger {
+    background-color: #dd4b39;
+}
 .edit-icon, .delete-icon {
     cursor: pointer;
 }

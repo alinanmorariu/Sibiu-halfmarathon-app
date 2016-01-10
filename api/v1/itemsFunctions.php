@@ -190,6 +190,45 @@ function updateRunner($id) {
    }
 }
 
+function updateSupporter($id) {
+   global $app;
+   $req = $app->request();
+   $supporter = json_decode($req->getBody());
+   $sql = "UPDATE sustinatori SET prenume=:prenume, nume=:nume, observatii=:observatii, companie=:companie, telefon=:telefon, email=:email,
+   adresa=:adresa, localitate=:localitate, sustin=:sustin, suma=:suma, fixa=:fixa, promisi=:promisi, suma_platita=:suma_platita, 
+   platiti=:platiti, tipPlata=:tipPlata, documentJustificativ=:documentJustificativ, dataPlata=:dataPlata, anonim=:anonim, contactOrganizatie=:contactOrganizatie 
+   WHERE sustinatorID=:sustinatorID";
+   try {
+     $db = getConnection();
+     $stmt = $db->prepare($sql);
+     $stmt->bindParam("prenume", $supporter->prenume);
+     $stmt->bindParam("nume", $supporter->nume);
+     $stmt->bindParam("observatii", $supporter->observatii);
+     $stmt->bindParam("companie", $supporter->companie);
+     $stmt->bindParam("telefon", $supporter->telefon);
+     $stmt->bindParam("email", $supporter->email);
+     $stmt->bindParam("adresa", $supporter->adresa);
+     $stmt->bindParam("localitate", $supporter->localitate);
+     $stmt->bindParam("sustin", $supporter->sustin);
+     $stmt->bindParam("suma", $supporter->suma);
+     $stmt->bindParam("fixa", $supporter->fixa);
+     $stmt->bindParam("promisi", $supporter->promisi);
+     $stmt->bindParam("suma_platita", $supporter->suma_platita);
+     $stmt->bindParam("platiti", $supporter->platiti);
+     $stmt->bindParam("tipPlata", $supporter->tipPlata);
+     $stmt->bindParam("documentJustificativ", $supporter->documentJustificativ);
+     $stmt->bindParam("dataPlata", $supporter->dataPlata);
+     $stmt->bindParam("anonim", $supporter->anonim);
+     $stmt->bindParam("contactOrganizatie", $supporter->contactOrganizatie);
+     $stmt->bindParam("sustinatorID", $id);
+     $stmt->execute();
+     $db = null;
+     echo json_encode(utf8ize($supporter));
+   } catch(PDOException $e) {
+     echo json_encode($e->getMessage());
+   }
+}
+
 function deleteItem($tableName, $itemID, $id) {
    $sql = "DELETE FROM $tableName WHERE $itemID=:$itemID";
    try {
@@ -209,6 +248,10 @@ function deleteProject($id) {
 
 function deleteRunner($id) {
     echo deleteItem('alergatori', 'alergatorID', $id);
+}
+
+function deleteSupporter($id) {
+    echo deleteItem('sustinatori', 'sustinatorID', $id);
 }
    
 ?>

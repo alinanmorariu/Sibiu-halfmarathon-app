@@ -25,6 +25,27 @@ supporters.controller('supportersCtrl', ['$scope', '$http', '$window', 'commonSe
                 return total;
             }
             
+            $scope.getTotalPayed = function() {
+                var total = 0;
+                    for (var i = 0; i < $scope.filtered.length; i++) {
+                        var supporter = $scope.filtered[i];
+                        total += parseInt(supporter.suma_platita);
+                    }
+          
+                return total;
+            }
+            
+            $scope.getTotalNotPayed = function() {
+                var total = 0;
+                    for (var i = 0; i < $scope.filtered.length; i++) {
+                        var supporter = $scope.filtered[i];
+                        total += parseInt(supporter.promisi) - parseInt(supporter.suma_platita);
+                    }
+          
+                return total;
+            }
+            
+            
             $scope.export = function() {
                 return commonService.exportExcel('"suporteri.xlsx"', $scope.filtered);
             }
@@ -37,7 +58,7 @@ supporters.controller('supportersCtrl', ['$scope', '$http', '$window', 'commonSe
     //delete supporters
     $scope.delete = function(id){
         
-        return commonService.deleteEntity('../api/v1/index.php/supporter/', id, 'Sigur doresti sa stergi alergatorul cu ID ', 'Alergatorul a fost sters!');
+        return commonService.deleteEntity('../api/v1/index.php/supporter/', id, 'Sigur doresti sa stergi sustinatorul cu ID ', 'Sustinatorul a fost sters!');
                                 }
 
     $scope.criteria = ["Nume", "Prenume", "Sustin", "Fixa", "Promisi", "Platiti", "Tip plata", "Anonim", "Contact organzatie"];

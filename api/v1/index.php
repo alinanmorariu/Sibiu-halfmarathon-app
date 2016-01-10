@@ -100,7 +100,7 @@
         '/runner/:id', 'deleteRunner'
     );
 
-$app->get(
+    $app->get(
         '/fundraisers', 'getFundraisers'
     );
 
@@ -114,6 +114,14 @@ $app->get(
 
     $app->get(
         '/supporter/:id', 'getSupporter'
+    );
+
+    $app->put(
+        '/supporter/:id', 'updateSupporter'
+    );
+
+    $app->delete(
+        '/supporter/:id', 'deleteSupporter'
     );
 
     $app->run();
