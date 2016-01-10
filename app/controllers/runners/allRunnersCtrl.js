@@ -1,29 +1,14 @@
-var companiesRunners = angular.module('companiesRunners', []);
+var allRunners = angular.module('allRunners', []);
 
 
-companiesRunners.controller('companiesRunnersCtrl', ['$scope', '$http', '$window', 'commonService', function($scope, $http, $window, commonService) {
+allRunners.controller('allRunnersCtrl', ['$scope', '$http', '$window', 'commonService', function($scope, $http, $window, commonService) {
 
     //GET the list of registered halfmarathon runners
-    var getAdultRunnersList = function() {
-        $http.get('../api/v1/index.php/runners/companies').success(function(response) {
+    var getAllRunnersList = function() {
+        $http.get('../api/v1/index.php/runners/all').success(function(response) {
 
             
-            $scope.adultRunners = response;
-            
-            
-   //Pagination         
-            
-                /*$scope.paginatedRunners = []
-  ,$scope.currentPage = 1
-  ,$scope.numPerPage = 10
-  ,$scope.maxSize = 5;
-  
-  $scope.$watch('currentPage + numPerPage', function() {
-    var begin = (($scope.currentPage - 1) * $scope.numPerPage)
-    , end = begin + $scope.numPerPage;
-    
-    $scope.paginatedRunners = $scope.adultRunners.slice(begin, end);
-  });*/
+            $scope.runners = response;
             
             $scope.sortType     = 'alergatorID'; 
             $scope.sortReverse  = false;
@@ -41,20 +26,14 @@ companiesRunners.controller('companiesRunnersCtrl', ['$scope', '$http', '$window
             }
             
             $scope.export = function() {
-                return commonService.exportExcel('"alergatoriAdulti.xlsx"', $scope.filtered);
+                return commonService.exportExcel('"alergatori.xlsx"', $scope.filtered);
             }
     
         });
     };
 
-    getAdultRunnersList();
-
-    //delete runners
-    $scope.delete = function(id){
-        
-        return commonService.deleteEntity('../api/v1/index.php/runner/', id, 'Sigur doresti sa stergi alergatorul cu ID ', 'Alergatorul a fost sters!');
-                                }
-
+    getAllRunnersList();
+    
     $scope.isCollapsed = true;
     var getProjectsList = function() {
         $http.get('../api/v1/index.php/projects').success(function(response) {
@@ -65,16 +44,17 @@ companiesRunners.controller('companiesRunnersCtrl', ['$scope', '$http', '$window
     };
     getProjectsList();
 
-    $scope.criteria = ["Companie", "Nume", "Prenume", "Proiect", "Cursa", "Platit"];
+    $scope.criteria = ["Nume", "Prenume", "Proiect", "Cursa", "Platit", "Tip plata"];
     $scope.statusPlati = ["0", "1"];
-    $scope.curse = [1, 2, 3, 4];
+    $scope.races = ["1", "2", "3", "4", "5", "6", "7"];
+    $scope.paymentMethods = ["cash", "online", "transfer", "sponsor", "voucher"];
     $scope.selected = {};
     $scope.selected.criteria = "";
     $scope.selected.name = "";
     $scope.selected.forname = "";
     $scope.selected.project = "";
     $scope.selected.payment = "";
-    $scope.selected.companie = "";
+    $scope.selected.paymentMethod = "";
     $scope.selected.cursa = "";
     
     $scope.clearFilters = function() {
@@ -83,7 +63,7 @@ companiesRunners.controller('companiesRunnersCtrl', ['$scope', '$http', '$window
         $scope.selected.forname = "";
         $scope.selected.project = "";
         $scope.selected.payment = "";
-        $scope.selected.companie = "";
+        $scope.selected.paymentMethod = "";
         $scope.selected.cursa = "";
     }
 }]);

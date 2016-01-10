@@ -65,8 +65,9 @@ adultRunners.controller('adultRunnersCtrl', ['$scope', '$http', '$window', 'comm
     };
     getProjectsList();
 
-    $scope.criteria = ["Nume", "Prenume", "Proiect", "Platit", "Tip plata"];
+    $scope.criteria = ["Nume", "Prenume", "Proiect", "Cursa", "Platit", "Tip plata"];
     $scope.statusPlati = ["0", "1"];
+    $scope.races = ["1", "2", "3", "4"];
     $scope.paymentMethods = ["cash", "online", "transfer", "sponsor", "voucher"];
     $scope.selected = {};
     $scope.selected.criteria = "";
@@ -75,6 +76,7 @@ adultRunners.controller('adultRunnersCtrl', ['$scope', '$http', '$window', 'comm
     $scope.selected.project = "";
     $scope.selected.payment = "";
     $scope.selected.paymentMethod = "";
+    $scope.selected.cursa = "";
     
     $scope.clearFilters = function() {
         $scope.selected.criteria = "";
@@ -83,6 +85,7 @@ adultRunners.controller('adultRunnersCtrl', ['$scope', '$http', '$window', 'comm
         $scope.selected.project = "";
         $scope.selected.payment = "";
         $scope.selected.paymentMethod = "";
+        $scope.selected.cursa = "";
     }
 }]);
 

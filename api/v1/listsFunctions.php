@@ -60,5 +60,9 @@
         echo getListByCriteria('ALERGATORI', 'cursa = "5" OR cursa = "6" OR cursa = "7"', 'timestamp');
     }
 
+    function getAllRunners () { 
+        echo getListByCriteria('ALERGATORI', 'cursa = "1" OR cursa = "2" OR cursa = "3" OR cursa = "4" OR cursa = "5" OR cursa = "6" OR cursa = "7"', 'timestamp');
+    }
+
 
 ?>

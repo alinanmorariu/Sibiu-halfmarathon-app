@@ -1,12 +1,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-            Alergatori adulti
+            Toti alergatorii
           </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Acasa</a></li>
         <li><a href="#">Alergatori</a></li>
-        <li><a href="#">Adulti</a></li>
+        <li><a href="#">Toti</a></li>
     </ol>
 </section>
 
@@ -79,7 +79,7 @@
                                     <span>Proiect : {{selected.project}}</span><span><a type="button" ng-click="selected.project = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
                                 <div class="col-sm-2" ng-show="selected.cursa!=''">
-                                    <span>Cursa : {{selected.cursa}}</span><span><a type="button" ng-click="selected.cursa = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                    <span>Proiect : {{selected.cursa}}</span><span><a type="button" ng-click="selected.cursa = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
                                 <div class="col-sm-2" ng-show="selected.payment!=''">
                                     <span>Platit : {{selected.payment}}</span><span><a type="button" ng-click="selected.payment = ''"><i class="fa fa-fw fa-close"></i></a></span>
@@ -97,42 +97,30 @@
                                 <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
                                     <thead>
                                         <tr role="row">
-                                            <th><a href="#runners/adults" ng-click="sortType = 'alergatorID'; sortReverse = !sortReverse">ID <i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'alergatorID' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'alergatorID' && sortReverse"></i></a></th>
-                                            <th><a href="#runners/adults" ng-click="sortType = 'prenume'; sortReverse = !sortReverse">Prenume<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'prenume' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'prenume' && sortReverse"></i></a></th>
-                                            <th><a href="#runners/adults" ng-click="sortType = 'nume'; sortReverse = !sortReverse">Nume<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'nume' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'nume' && sortReverse"></i></a></th>
-                                            <th><a href="#runners/adults" ng-click="sortType = 'cursa'; sortReverse = !sortReverse">Cursa<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'cursa' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'cursa' && sortReverse"></i></a></th>
-                                            <th><a href="#runners/adults" ng-click="sortType = 'categorie'; sortReverse = !sortReverse">Categorie<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'categorie' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'categorie' && sortReverse"></i></a></th>
-                                            <th><a href="#runners/adults" ng-click="sortType = 'echipa'; sortReverse = !sortReverse">Echipa<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'echipa' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'echipa' && sortReverse"></i></a></th>
-                                            <th><a href="#runners/adults" ng-click="sortType = 'proiectAles'; sortReverse = !sortReverse">Proiect<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'proiectAles' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'proiectAles' && sortReverse"></i></a></th>
-                                            <th><a href="#runners/adults" ng-click="sortType = 'confirmat'; sortReverse = !sortReverse">Confirmat<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'confirmat' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'confirmat' && sortReverse"></i></a></th>
-                                            <th><a href="#runners/adults" ng-click="sortType = 'platit'; sortReverse = !sortReverse">Platit<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'platit' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'platit' && sortReverse"></i></a></th>
-                                            <th><a href="#runners/adults" ng-click="sortType = 'tipPlata'; sortReverse = !sortReverse">Tip plata<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'tipPlata' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'tipPlata' && sortReverse"></i></a></th>
-                                            <th>Edit</th>
-                                            <th>Dlt</th>
+                                            <th><a href="#runners/all" ng-click="sortType = 'alergatorID'; sortReverse = !sortReverse">ID <i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'alergatorID' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'alergatorID' && sortReverse"></i></a></th>
+                                            <th><a href="#runners/all" ng-click="sortType = 'prenume'; sortReverse = !sortReverse">Prenume<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'prenume' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'prenume' && sortReverse"></i></a></th>
+                                            <th><a href="#runners/all" ng-click="sortType = 'nume'; sortReverse = !sortReverse">Nume<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'nume' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'nume' && sortReverse"></i></a></th>
+                                            <th><a href="#runners/all" ng-click="sortType = 'cursa'; sortReverse = !sortReverse">Cursa<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'cursa' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'cursa' && sortReverse"></i></a></th>
+                                            <th><a href="#runners/all" ng-click="sortType = 'categorie'; sortReverse = !sortReverse">Categorie<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'categorie' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'categorie' && sortReverse"></i></a></th>
+                                            <th><a href="#runners/all" ng-click="sortType = 'echipa'; sortReverse = !sortReverse">Echipa<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'echipa' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'echipa' && sortReverse"></i></a></th>
+                                            <th><a href="#runners/all" ng-click="sortType = 'proiectAles'; sortReverse = !sortReverse">Proiect<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'proiectAles' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'proiectAles' && sortReverse"></i></a></th>
+                                            <th><a href="#runners/all" ng-click="sortType = 'confirmat'; sortReverse = !sortReverse">Confirmat<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'confirmat' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'confirmat' && sortReverse"></i></a></th>
+                                            <th><a href="#runners/all" ng-click="sortType = 'platit'; sortReverse = !sortReverse">Platit<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'platit' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'platit' && sortReverse"></i></a></th>
+                                            <th><a href="#runners/all" ng-click="sortType = 'tipPlata'; sortReverse = !sortReverse">Tip plata<i class="fa fa-fw fa-chevron-down" ng-show="sortType == 'tipPlata' && !sortReverse"></i><i class="fa fa-fw fa-chevron-up" ng-show="sortType == 'tipPlata' && sortReverse"></i></a></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr ng-repeat="adultRunner in filtered = (adultRunners  | filter:{nume:selected.name, prenume:selected.forname, proiectAles:selected.project, platit:selected.payment, tipPlata:selected.paymentMethod, cursa:selected.cursa} | orderBy:sortType:sortReverse)">
-                                            <td>{{adultRunner.alergatorID}}</td>
-                                            <td>{{adultRunner.prenume}}</td>
-                                            <td>{{adultRunner.nume}}</td>
-                                            <td>{{adultRunner.cursa}}</td>
-                                            <td>{{adultRunner.categorie}}</td>
-                                            <td>{{adultRunner.echipa}}</td>
-                                            <td>{{adultRunner.proiectAles}}</td>
-                                            <td>{{adultRunner.confirmat}}</td>
-                                            <td>{{adultRunner.platit}}</td>
-                                            <td>{{adultRunner.tipPlata}}</td>
-                                            <td>
-                                                <div class="tools" ng-controller="modalAdultRunnerCtrl">
-                                                    <a ng-click="open(adultRunner.alergatorID)"><i class="fa fa-edit edit-icon"></i></a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="tools">
-                                                    <a ng-click="delete(adultRunner.alergatorID)"><i class="fa fa-trash-o delete-icon"></i></a>
-                                                </div>
-                                            </td>
+                                        <tr ng-repeat="runner in filtered = (runners  | filter:{nume:selected.name, prenume:selected.forname, proiectAles:selected.project, platit:selected.payment, tipPlata:selected.paymentMethod, cursa:selected.cursa} | orderBy:sortType:sortReverse)">
+                                            <td>{{runner.alergatorID}}</td>
+                                            <td>{{runner.prenume}}</td>
+                                            <td>{{runner.nume}}</td>
+                                            <td>{{runner.cursa}}</td>
+                                            <td>{{runner.categorie}}</td>
+                                            <td>{{runner.echipa}}</td>
+                                            <td>{{runner.proiectAles}}</td>
+                                            <td>{{runner.confirmat}}</td>
+                                            <td>{{runner.platit}}</td>
+                                            <td>{{runner.tipPlata}}</td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
@@ -147,8 +135,6 @@
                                             <th rowspan="1" colspan="1">Confirmat</th>
                                             <th rowspan="1" colspan="1">Platit</th>
                                             <th rowspan="1" colspan="1">Tip plata</th>
-                                            <th rowspan="1" colspan="1">Edit</th>
-                                            <th rowspan="1" colspan="1">Dlt</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -168,12 +154,5 @@
         <!-- /.col -->
     </div>
     <!-- /.row -->
-    <!-- Pagination -->
-    <!--<div class="row">
-        <div class="col-xs-12">
-<uib-pagination total-items="adultRunners.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" ></uib-pagination>
-    <pre>Page: {{currentPage}} / {{numPages}}</pre>
-        </div>
-    </div>-->
 </section>
 <!-- /.content -->

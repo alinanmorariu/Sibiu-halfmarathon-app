@@ -65,6 +65,10 @@
     );
 
     $app->get(
+        '/runners/all', 'getAllRunners'
+    );
+
+    $app->get(
         '/runner/:id', 'getRunner'
     );
 
