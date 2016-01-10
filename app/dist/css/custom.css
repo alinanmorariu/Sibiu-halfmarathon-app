@@ -114,3 +114,10 @@
 #clear-filters {
     color: #555555;
 }
+
+.long-text {
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

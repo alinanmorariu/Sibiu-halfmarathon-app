@@ -69,6 +69,10 @@
     );
 
     $app->get(
+        '/fundraisers', 'getFundraisers'
+    );
+
+    $app->get(
         '/runner/:id', 'getRunner'
     );
 
