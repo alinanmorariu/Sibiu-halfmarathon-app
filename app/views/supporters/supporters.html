@@ -34,21 +34,27 @@
                                 <div class="col-sm-2">
                                     <input type="text" class="form-control filter-field" placeholder="Introdu numele" ng-show="selected.criteria=='Nume'" ng-model="selected.name">
                                     <input type="text" class="form-control filter-field" placeholder="Introdu prenumele" ng-show="selected.criteria=='Prenume'" ng-model="selected.forname">
-                                    <select id="proiectAles" name="proiectAles" type="text" class="form-control filter-field" ng-show="selected.criteria=='Proiect'" ng-model="selected.project">
+                                    <input type="text" class="form-control filter-field" ng-show="selected.criteria=='Sustin'" ng-model="selected.support">
+                                    <select id="fixa" name="fixa" type="text" class="form-control filter-field" ng-show="selected.criteria=='Fixa'" ng-model="selected.fixedSum">
                                         <option value="">Alege...</option>
-                                        <option ng-repeat="project in projects">{{project.proiectID}}</option>
+                                        <option ng-repeat="fixedSum in fixedSums">{{fixedSum}}</option>
                                     </select>
-                                    <select id="cursa" name="cursa" type="text" class="form-control filter-field" ng-show="selected.criteria=='Cursa'" ng-model="selected.cursa">
+                                    <input type="text" class="form-control filter-field" ng-show="selected.criteria=='Promisi'" ng-model="selected.promised">
+                                    <select id="platiti" name="platiti" type="text" class="form-control filter-field" ng-show="selected.criteria=='Platiti'" ng-model="selected.payment">
                                         <option value="">Alege...</option>
-                                        <option ng-repeat="race in races">{{race}}</option>
+                                        <option ng-repeat="payment in payments">{{payment}}</option>
                                     </select>
-                                    <select id="platit" name="platit" type="text" class="form-control filter-field" ng-show="selected.criteria=='Platit'" ng-model="selected.payment">
-                                        <option value="">Alege...</option>
-                                        <option ng-repeat="statusPlata in statusPlati">{{statusPlata}}</option>
-                                    </select>
-                                    <select id="paymenMethod" name="paymentMethod" type="text" class="form-control filter-field" ng-show="selected.criteria=='Tip plata'" ng-model="selected.paymentMethod">
+                                    <select id="paymentMethod" name="paymentMethod" type="text" class="form-control filter-field" ng-show="selected.criteria=='Tip plata'" ng-model="selected.paymentMethod">
                                         <option value="">Alege...</option>
                                         <option ng-repeat="paymentMethod in paymentMethods">{{paymentMethod}}</option>
+                                    </select>
+                                    <select id="anonim" name="anonim" type="text" class="form-control filter-field" ng-show="selected.criteria=='Anonim'" ng-model="selected.anonim">
+                                        <option value="">Alege...</option>
+                                        <option ng-repeat="anonim in anonims">{{anonim}}</option>
+                                    </select>
+                                    <select id="contactOrg" name="contactOrg" type="text" class="form-control filter-field" ng-show="selected.criteria=='Contact organizatie'" ng-model="selected.contactOrg">
+                                        <option value="">Alege...</option>
+                                        <option ng-repeat="contactOrg in contactOrgs">{{contactOrg}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -75,19 +81,28 @@
                                 <div class="col-sm-2" ng-show="selected.forname!=''">
                                     <span>Prenume : {{selected.forname}}</span><span><a type="button" ng-click="selected.forname = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
-                                <div class="col-sm-2" ng-show="selected.project!=''">
-                                    <span>Proiect : {{selected.project}}</span><span><a type="button" ng-click="selected.project = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                <div class="col-sm-2" ng-show="selected.support!=''">
+                                    <span>Sustin : {{selected.support}}</span><span><a type="button" ng-click="selected.support = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
-                                <div class="col-sm-2" ng-show="selected.cursa!=''">
-                                    <span>Cursa : {{selected.cursa}}</span><span><a type="button" ng-click="selected.cursa = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                <div class="col-sm-2" ng-show="selected.fixedSum!=''">
+                                    <span>Fixa : {{selected.fixedSum}}</span><span><a type="button" ng-click="selected.fixedSum = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                </div>
+                                <div class="col-sm-2" ng-show="selected.promised!=''">
+                                    <span>Promisi : {{selected.promised}}</span><span><a type="button" ng-click="selected.promised = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
                                 <div class="col-sm-2" ng-show="selected.payment!=''">
-                                    <span>Platit : {{selected.payment}}</span><span><a type="button" ng-click="selected.payment = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                    <span>Platiti : {{selected.payment}}</span><span><a type="button" ng-click="selected.payment = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
                                 <div class="col-sm-2" ng-show="selected.paymentMethod!=''">
                                     <span>Tip plata : {{selected.paymentMethod}}</span><span><a type="button" ng-click="selected.paymentMethod = ''"><i class="fa fa-fw fa-close"></i></a></span>
                                 </div>
-                                <div class="col-sm-2 clear-filters" ng-show="selected.name!='' || selected.forname!='' || selected.project!='' || selected.payment!='' || selected.paymentMethod!='' || selected.cursa!=''">
+                                <div class="col-sm-2" ng-show="selected.anonim!=''">
+                                    <span>Anonim : {{selected.anonim}}</span><span><a type="button" ng-click="selected.anonim = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                </div>
+                                <div class="col-sm-2" ng-show="selected.contactOrg!=''">
+                                    <span>Contact organizatie : {{selected.contactOrg}}</span><span><a type="button" ng-click="selected.contactOrg = ''"><i class="fa fa-fw fa-close"></i></a></span>
+                                </div>
+                                <div class="col-sm-2 clear-filters" ng-show="selected.name!='' || selected.forname!='' || selected.support!='' || selected.payment!='' || selected.paymentMethod!='' || selected.fixedSum!='' || selected.promised!='' || selected.anonim!='' || selected.contactOrg!=''">
                                     <span><button class="btn" id="clear-filters" type="button" ng-click="clearFilters()">Sterge toate filtrele</button></span>
                                 </div>
                             </div>
@@ -116,7 +131,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr ng-repeat="supporter in filtered = (supporters  | filter:{nume:selected.name, prenume:selected.forname, proiectAles:selected.project, platit:selected.payment, tipPlata:selected.paymentMethod, cursa:selected.cursa} | orderBy:sortType:sortReverse)">
+                                        <tr ng-repeat="supporter in filtered = (supporters  | filter:{nume:selected.name, prenume:selected.forname, sustin:selected.support, platiti:selected.payment, tipPlata:selected.paymentMethod, fixa:selected.fixedSum, promisi:selected.promised, anonim:selected.anonim, contactOrganizatie:selected.contactOrg} | orderBy:sortType:sortReverse)">
                                             <td>{{supporter.sustinatorID}}</td>
                                             <td>{{supporter.prenume}}</td>
                                             <td>{{supporter.nume}}</td>

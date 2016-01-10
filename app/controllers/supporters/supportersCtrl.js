@@ -40,30 +40,37 @@ supporters.controller('supportersCtrl', ['$scope', '$http', '$window', 'commonSe
         return commonService.deleteEntity('../api/v1/index.php/supporter/', id, 'Sigur doresti sa stergi alergatorul cu ID ', 'Alergatorul a fost sters!');
                                 }
 
-    $scope.isCollapsed = true;
-
-    /*$scope.criteria = ["Nume", "Prenume", "Proiect", "Cursa", "Platit", "Tip plata"];
-    $scope.statusPlati = ["0", "1"];
-    $scope.races = ["1", "2", "3", "4"];
-    $scope.paymentMethods = ["cash", "online", "transfer", "sponsor", "voucher"];
+    $scope.criteria = ["Nume", "Prenume", "Sustin", "Fixa", "Promisi", "Platiti", "Tip plata", "Anonim", "Contact organzatie"];
+    $scope.fixedSums = [0, 1];
+    $scope.anonims = [0, 1];
+    $scope.contactOrgs = [0, 1];
+    $scope.paymentMethods = ["cash", "online", "transfer"];
+    $scope.payments = [0, 1];
     $scope.selected = {};
     $scope.selected.criteria = "";
     $scope.selected.name = "";
     $scope.selected.forname = "";
-    $scope.selected.project = "";
-    $scope.selected.payment = "";
+    $scope.selected.support = "";
+    $scope.selected.fixedSum = "";
+    $scope.selected.promised = "";
     $scope.selected.paymentMethod = "";
-    $scope.selected.cursa = "";
+    $scope.selected.payment = "";
+    $scope.selected.anonim = "";
+    $scope.selected.contactOrg = "";
+    
     
     $scope.clearFilters = function() {
         $scope.selected.criteria = "";
         $scope.selected.name = "";
         $scope.selected.forname = "";
-        $scope.selected.project = "";
-        $scope.selected.payment = "";
+        $scope.selected.fixedSum = "";
+        $scope.selected.promised = "";
         $scope.selected.paymentMethod = "";
-        $scope.selected.cursa = "";
-    }*/
+        $scope.selected.payment = "";
+        $scope.selected.anonim = "";
+        $scope.selected.contactOrg = "";
+        $scope.selected.support = "";
+    }
 }]);
 
 supporters.controller('modalSupporterCtrl', ['$scope', '$uibModal', '$http',
