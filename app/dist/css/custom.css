@@ -131,3 +131,20 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+#first-row {
+    font-weight: bold;
+    background-color: #25aae1;
+    color: #fff;
+}
+
+#other-row td, #second-row td, #third-row td{
+    font-weight: 400;
+    color: #777;
+    font-size: 1.35em;
+}
+
+#second-row span, #other-row span, #third-row span{
+    font-weight: 600;
+    font-size: 1.5rem;
+}

@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
     <!-- Sweet alert style -->
     <link rel="stylesheet" href="libs/SweetAlert/sweet-alert.css">
+    <!-- Charts styles -->
+    <link rel="stylesheet" href="libs/Charts/angular-chart.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
     <!-- Morris chart -->
@@ -207,29 +209,12 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                  <li><a href="#"><i class="fa fa-circle-o"></i> Total sume/proiect</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Total alergatori/proiect</a></li>
-                  <li><a href="#"><i class="fa fa-circle-o"></i> Total alergatori/cursa <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-                <li>
-                  <a href="#"><i class="fa fa-circle-o"></i> Adulti <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Semimaraton</a></li>
-                      <li><a href="#"><i class="fa fa-circle-o"></i> Cros</a></li>
-                    <li>
-                      <a href="#"><i class="fa fa-circle-o"></i> Stafete <i class="fa fa-angle-left pull-right"></i></a>
-                      <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> 2x10km</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> 4x5km</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                               <li><a href="#"><i class="fa fa-circle-o"></i> Copii</a></li>
-              </ul>
-                  </li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Total sume/proiect</a></li>
+                <li><a href="#statistics/runners-per-project"><i class="fa fa-circle-o"></i> Total alergatori/proiect</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Total alergatori/cursa</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> Total sustinatori/proiect</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> Total sustinatori/fundraiser</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Total sustineri/fundraiser</a></li>
               </ul>
             </li>
             <!--<li><a href="#"><i class="fa  fa-list-ol"></i> TO DOs</a></li>-->
@@ -300,9 +285,14 @@
     <script src="controllers/fundraisers/fundraisersCtrl.js"></script>
     <script src="controllers/races/racesCtrl.js"></script>
     <script src="controllers/supporters/supportersCtrl.js"></script>
+    <script src="controllers/statistics/statisticsCtrl.js"></script>
     <!-- Export data -->
     <script src="libs/Exports/xlsx.core.min.js"></script>
     <script src="libs/Exports/alasql.min.js"></script> 
+    <!-- Charts -->
+    <script src="libs/Charts/Chart.min.js"></script> 
+    <script src="libs/Charts/angular-chart.min.js"></script> 
+    
     <!-- Morris.js charts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="plugins/morris/morris.min.js"></script>
