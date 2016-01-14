@@ -98,7 +98,7 @@ adultRunners.controller('modalAdultRunnerCtrl', ['$scope', '$uibModal', '$http',
                 var modalInstance = $uibModal.open({
                     animation: $scope.animationsEnabled,
                     templateUrl: '../app/views/runners/updateAdultRunnerModal.html',
-                    controller: 'ModalInstanceCtrl',
+                    controller: 'ModalInstanceRunnerCtrl',
                     id: id,
                     size: size,
                     resolve: {
@@ -112,7 +112,7 @@ adultRunners.controller('modalAdultRunnerCtrl', ['$scope', '$uibModal', '$http',
     }
 ]);
 
-adultRunners.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', 'item', '$http', '$window',
+adultRunners.controller('ModalInstanceRunnerCtrl', ['$scope', '$uibModalInstance', 'item', '$http', '$window',
     function($scope, $uibModalInstance, item, $http, $window) {
         
         $scope.categories = ["Feminin", "Masculin"];

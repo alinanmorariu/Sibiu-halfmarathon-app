@@ -148,3 +148,7 @@
     font-weight: 600;
     font-size: 1.5rem;
 }
+
+.statistics-active-filter {
+    margin-left: 16px;
+}

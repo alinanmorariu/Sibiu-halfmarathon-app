@@ -90,6 +90,16 @@ statistics.controller('statisticsCtrl', ['$scope', '$http', '$window', 'commonSe
     };
 
     getRunnersList();
-
-
+    
+    $scope.criteria = ["Proiect", "ONG"];
+    $scope.selected = {};
+    $scope.selected.criteria = "";
+    $scope.selected.project = "";
+    $scope.selected.ngo = "";
+    
+    $scope.clearFilters = function() {
+        $scope.selected.criteria = "";
+        $scope.selected.project = "";
+        $scope.selected.ngo = "";
+    }
 }]);
